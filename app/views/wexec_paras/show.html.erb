@@ -1,0 +1,20 @@
+<% title "Wexec Para" %>
+
+<p>
+  <strong>Wexec:</strong>
+  <%= @wexec_para.wexec_id %>
+</p>
+<p>
+  <strong>Pname:</strong>
+  <%= @wexec_para.pname %>
+</p>
+<p>
+  <strong>Pcaption:</strong>
+  <%= @wexec_para.pcaption %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_wexec_para_path(@wexec_para) %> |
+  <%= link_to "Destroy", @wexec_para, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", wexec_paras_path %>
+</p>

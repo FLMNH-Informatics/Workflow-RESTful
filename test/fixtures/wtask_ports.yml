@@ -1,0 +1,9 @@
+one:
+  wtask_id: 1
+  ptype: 1
+  ploc: MyText
+
+two:
+  wtask_id: 1
+  ptype: 1
+  ploc: MyText

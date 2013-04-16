@@ -1,0 +1,225 @@
+# app/controllers/raxmls_controller.rb
+
+class RaxmlsController < ApplicationController
+  # GET /raxmls
+  # GET /raxmls.json
+  def index
+    a = [ 1, "cat", 3.14 ]
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: a }
+    end
+  end
+
+
+  # GET /raxmls/1
+  # GET /raxmls/1.json
+  def show
+    job_id = params[:id]
+
+    #show_doc_type = params[:show_doc_type]
+
+
+    sequence = "/services/rest/raxml/result/"+job_id.to_s+"/sequence.txt"
+    output = "/services/rest/raxml/result/"+job_id.to_s+"/"+"output.txt"
+    results_tar = "/services/rest/raxml/result/"+job_id.to_s+"/"+"results.tar.gz"
+
+
+    results= { "sequence" => sequence, "output" => output, "results_tar" => results_tar}
+    #puts results
+
+
+
+    #redirect_to a
+    respond_to do |format|
+      #format.html { render :json job_id } # equal to format.html { render json: job_id }
+      format.html { render json: results.to_json }
+      format.json { render json: results.to_json }
+      #  format.html # index.html.erb
+      #  format.json { render json: a }
+    end
+  end
+
+
+  # POST /raxmls
+  # POST /raxmls.json
+  def create
+
+
+
+    uploaded_io = params[:fileParam]
+    modelofevolution = params[:modelofevolution]
+    numberofruns = params[:numberofruns]
+
+    wtaskid = params[:wtaskid]
+
+
+
+
+
+    dirname = `./job_builder.sh`
+    filename = ''
+
+    results = ''
+
+
+    if uploaded_io
+      #puts 'Yes'
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+        file.write(uploaded_io.read)
+      end
+      filename = uploaded_io.original_filename
+      mv_command = "mv public/uploads/" + uploaded_io.original_filename + " " + dirname
+
+      system mv_command
+      #system "mv sequence.txt "+ dirname
+
+
+      pwd =  `pwd`
+      puts pwd
+
+      Dir.chdir dirname.chomp
+
+
+
+
+
+
+      #puts seq_dest
+
+      # no need anymore
+      #seq_dest = dirname.chomp+"/" + filename
+      #output_dest = dirname.chomp+"/"+filename+".out"
+      #cp_seq_file = "cp " + seq_dest + " " + filename
+      #puts cp_seq_file
+      #system cp_seq_file
+      # no need anymore
+
+
+      raxml_execution_string = "./../raxmlHPC -s " + filename + " -n " + filename + ".out -m " + modelofevolution +" -# " + numberofruns + " "
+
+      system raxml_execution_string
+      puts raxml_execution_string
+
+
+      system "cp RAxML_info." + filename +".out " + dirname.chomp + ".out"
+
+      #Tar
+      system "tar -zcvf results.tar.gz *.*"
+
+
+
+      system "cd .."
+      Dir.chdir ".."
+
+      pwd2 = `pwd`                                                                                                                                    ting conventional science
+      puts pwd2
+
+      system "mv "+dirname.chomp+"/ public/services/rest/raxml/result/"
+
+
+
+
+
+      server_name = request.env["SERVER_NAME"]
+      server_port = request.env["SERVER_PORT"]
+      puts server_name + ':' + server_port
+
+      job_id = dirname.chomp
+      #results = title + ' ::222:: ' + eml_address
+      #results= { "job_id" => dirname.chomp }
+      #results= { "job_id" => job_id }
+
+      #results = 'Successfully submitted!<br><br>Please go to the following links to check your submitted results:<br>'
+      #results += '<a href="/services/rest/raxml/result/'+ job_id + '/RAxML_info.' + filename + '.out">Output</a><br>'
+      #results += '<a href="/services/rest/raxml/result/'+ job_id + '/results.tar.gz">Tar Result</a><br>'
+
+      results= { "job_id" => job_id, "results" => "/services/rest/raxml/result/" + job_id + "/results.tar.gz", "stat" => "/services/rest/raxml/result/" + job_id + "/RAxML_info." + filename + ".out" }
+
+      #return 'REST Response :: ' + response.body
+
+      #step 2:: save the result folder
+      #copy the folder back to workflow folder?
+      #Or just record/save the job_id?
+
+      #if job_ib exists -> means this task is successfully running
+      #Update this task's status from 'initial' to 'done'
+      @wtask = Wtask.find(wtaskid)
+      @wtask.update_attribute('wtask_status', 'done')
+
+      #copy the completed alignment file back to workflow folder
+      @wflow = Wflow.find(@wtask[:wflow_id])
+
+      cp_results = "cp public/services/rest/raxml/result/"+ job_id + "/results.tar.gz" + " public/services/workflows/" + @wflow[:wfolder]
+      puts cp_results
+      system cp_results
+
+      #save the job_id to table::wtasks
+      @wtask.update_attribute('wtask_folder', "/services/rest/raxml/result/"+job_id)
+
+
+
+      #:wtask_id, :ptype, :ploc
+      #http://apidock.com/rails/v3.1.0/ActiveRecord/Base/assign_attributes
+      @wtask_ports = WtaskPort.where( :wtask_id => wtaskid)
+      @wtask_ports.each do |a|
+        puts 'ID is :: ' + a.id.to_s
+        @wtask_port = WtaskPort.find(a.id)
+        puts 'pname is :: ' + @wtask_port["pname"]
+
+        if @wtask_port["pname"] == "source"
+          @wtask_port.update_attribute('ploc', "/services/rest/raxml/result/" + job_id + "/" + filename)
+        end
+        if @wtask_port["pname"] == "results"
+          @wtask_port.update_attribute('ploc', "/services/rest/raxml/result/" + job_id + "/results.tar.gz")
+        end
+        if @wtask_port["pname"] == "statistics"
+          @wtask_port.update_attribute('ploc', "/services/rest/raxml/result/" + job_id + "/RAxML_info." + filename + ".out" )
+        end
+
+      end
+
+
+
+
+
+
+    else
+      #puts 'No'
+      #results = 'Fail! No input.'
+      results= { "job_id" => 0 }
+    end
+
+
+
+
+
+
+
+
+
+    respond_to do |format|
+      #format.html { render 'Was successfully created.' }#is that correct?
+      #format.html { render 'Successfully submitted! Please go to the following links to check your submitted results:<br><a href="/services/rest/muscle/result/'+ job_id + '">Aligned File</a><br><a href="">Output</a>' }
+
+      format.html { render json: results }
+      #format.html { render json: results.to_json }
+      #format.json { render json: results.to_json }
+
+      #if b
+      #format.html { render b }
+      ##format.html { render 'Person was successfully created.' }
+      #format.json { render json: b }
+      #else
+      #format.html { render b }
+      ##format.html { render 'Not created.' }
+      #format.json { render json: b }
+      #end
+    end
+
+
+
+
+
+  end
+end

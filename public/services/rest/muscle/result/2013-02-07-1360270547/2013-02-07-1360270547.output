@@ -1,0 +1,69 @@
+Started Thu Feb  7 15:55:47 2013
+./../muscle3.8.31_i86linux32 -in example.fasta -verbose -log 2013-02-07-1360270547.output -fasta -out 2013-02-07-1360270547.fasta -group -maxiters 2 
+Alphabet DNA
+
+MUSCLE v3.8.31 by Robert C. Edgar
+http://www.drive5.com/muscle
+
+Profile-profile score    SPN
+Max iterations           2
+Max trees                1
+Max time                 (No limit)
+Max MB                   4294967055
+Gap open                 -400
+Gap extend (dimer)       0
+Gap ambig factor         0
+Gap ambig penalty        -0
+Center (LE)              0
+Term gaps                Half
+Smooth window length     7
+Refine window length     200
+Min anchor spacing       32
+Min diag length (lambda) 24
+Diag margin (mu)         5
+Min diag break           1
+Hydrophobic window       5
+Hydrophobic gap factor   1.2
+Smooth score ceiling     999
+Min best col score       90
+Min anchor score         90
+SUEFF                    0.1
+Brenner root MSA         False
+Normalize counts         False
+Diagonals (1)            False
+Diagonals (2)            False
+Anchors                  True
+MSF output format        False
+Phylip interleaved       False
+Phylip sequential        False
+ClustalW output format   False
+Catch exceptions         True
+Quiet                    False
+Refine                   False
+ProdfDB                  False
+Low complexity profiles  True
+Objective score          SPM
+Distance method (1)      Kmer4_6
+Clustering method (1)    UPGMB
+Root method (1)          Pseudo
+Sequence weighting (1)   ClustalW
+Distance method (2)      PctIdKimura
+Clustering method (2)    UPGMB
+Root method (2)          Pseudo
+Sequence weighting (2)   ClustalW
+
+5 seqs, max length 60, avg  length 60
+Elapsed time 00:00:00  Peak memory use   10 MB(-3%)  Iteration   1 K-mer dist pass 1
+Elapsed time 00:00:00  Peak memory use   10 MB(-3%)  Iteration   1 K-mer dist pass 2
+Align: (gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial) (gi|123456785|gb|JX123455.1| Aus fus XXX cytochrome b (cytb) gene, partial cds; mitochondrial)
+Align: (gi|123456784|gb|JX123454.1| Aus eus XXX cytochrome b (cytb) gene, partial cds; mitochondrial) (gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456785|gb|JX123455.1| Aus fus XXX cytochrome b (cytb) gene, partial cds; mitochondrial)
+Align: (gi|123456781|gb|JX123451.1| Aus bus XXX cytochrome b (cytb) gene, partial cds; mitochondrial) (gi|123456784|gb|JX123454.1| Aus eus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456785|gb|JX123455.1| Aus fus XXX cytochrome b (cytb) gene, partial cds; mitochondrial)
+Align: (gi|123456783|gb|JX123453.1| Aus dus XXX cytochrome b (cytb) gene, partial cds; mitochondrial) (gi|123456781|gb|JX123451.1| Aus bus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456784|gb|JX123454.1| Aus eus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial,gi|123456785|gb|JX123455.1| Aus fus XXX cytochrome b (cytb) gene, partial cds; mitochondrial)
+Elapsed time 00:00:00  Peak memory use   11 MB(-4%)  Iteration   1 Align node
+Elapsed time 00:00:00  Peak memory use   11 MB(-4%)  Iteration   1 Root alignment
+Elapsed time 00:00:00  Peak memory use   12 MB(-4%)  Iteration   2 Refine tree
+Elapsed time 00:00:00  Peak memory use   12 MB(-4%)  Iteration   2 Root alignment
+Elapsed time 00:00:00  Peak memory use   12 MB(-4%)  Iteration   2 Root alignment
+Anchor columns found       0
+DP area saved by anchors   0.0 %
+Finished Thu Feb  7 15:55:47 2013

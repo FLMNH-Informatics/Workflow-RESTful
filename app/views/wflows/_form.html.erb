@@ -1,0 +1,22 @@
+<%= form_for(@wflow, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name, "Workflow Name" %><br />
+    <!--<%= f.text_area :name %>-->
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :desc, "Description" %><br />
+    <%= f.text_area :desc %>
+  </p>
+  <p>
+    <!--<%= f.label :Creator, "Creator" %><br />-->
+    <!--<%= f.number_field :Creator %>-->
+  </p>
+  <p>
+    <%= f.label :uploaded_file, "Upload a sequence file:" %><br>
+    <%= file_field_tag 'uploaded_file' %>
+  </p>
+
+  <p><%= f.submit %></p>
+<% end %>

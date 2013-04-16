@@ -1,0 +1,21 @@
+<% title "Wexec Paras" %>
+
+<table>
+  <tr>
+    <th>Wexec</th>
+    <th>Pname</th>
+    <th>Pcaption</th>
+  </tr>
+  <% for wexec_para in @wexec_paras %>
+    <tr>
+      <td><%= wexec_para.wexec_id %></td>
+      <td><%= wexec_para.pname %></td>
+      <td><%= wexec_para.pcaption %></td>
+      <td><%= link_to "Show", wexec_para %></td>
+      <td><%= link_to "Edit", edit_wexec_para_path(wexec_para) %></td>
+      <td><%= link_to "Destroy", wexec_para, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Wexec Para", new_wexec_para_path %></p>

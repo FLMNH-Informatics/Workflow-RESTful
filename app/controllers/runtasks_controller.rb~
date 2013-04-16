@@ -1,0 +1,51 @@
+class RuntasksController < ApplicationController
+
+  require 'rubygems'
+  require 'rest_client'
+
+
+
+  # GET /runtasks/1
+
+  def show
+    task_id = params[:id]
+    puts 'runtasks::task_id is ::' + task_id.to_s
+    
+    @wtask = Wtask.find(task_id)
+    @wexec = Wexec.find(@wtask.exe_id)
+    @wexec_paras = WexecPara.all
+
+
+    #private_resource = RestClient::Resource.new 'http://10.243.11.78:3000/muscles',  :timeout => 20, :open_timeout => 5
+    #private_resource.post File.read('example.fasta'), :output_format => '-clw'
+
+    #response = RestClient.post 'http://10.243.11.78:3000/muscles', :fileParam => File.new("example.fasta", 'rb'), :output_format => '-clw'
+    #curl -F "fileParam=@example.fasta" -F "output_format=-clw" http://10.243.11.78:3000/muscles
+    #RestClient.post '/data', :myfile => File.new("/path/to/image.jpg", 'rb')
+    #debugger
+    #a = response.body
+    #puts a
+    
+
+    #system 'ruby restclient_ex1.rb &'
+
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      #format.html { render json: a }
+      #format.html { render json: '123' }
+            format.html { render :json => '123' }
+      #format.html { redirect_to '/wtasks/'+wtask_id }
+    end
+
+  end
+
+  
+  def create
+    puts 'Hello, there!'
+    system 'ruby restclient_ex1.rb'
+
+  end
+
+
+end

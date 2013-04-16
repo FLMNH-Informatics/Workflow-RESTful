@@ -1,0 +1,79 @@
+
+You are using a proportion of Invariable sites estimate, although I don't
+like it. The likelihood epsilon "-f e" will be automatically lowered to 0.001
+to avoid unfavorable effects caused by simultaneous optimization of alpha and P-Invar
+
+
+This is RAxML version 7.2.8 released by Alexandros Stamatakis in October 2010.
+
+With greatly appreciated code contributions by:
+Andre Aberer (TUM)
+Simon Berger (TUM)
+John Cazes (TACC)
+Michael Ott (TUM)
+Nick Pattengale (UNM)
+Wayne Pfeiffer (SDSC)
+Akifumi S. Tanabe (Univ. Tsukuba)
+
+
+Alignment has 68 distinct alignment patterns
+
+Found 0 invariant alignment patterns that correspond to 0 columns 
+Proportion of gaps and completely undetermined characters in this alignment: 26.83%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 5 inferences on the original alignment using 5 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+GAMMA+P-Invar model of rate heteorgeneity, ML estimate of alpha-parameter
+
+GAMMA+P-Invar Model parameters will be estimated up to an accuracy of 0.0010000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 68
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+./../raxmlHPC -s 2012-12-12-1355337061.phylip -n 2012-12-12-1355337061.phylip.out -m GTRGAMMAI -# 5 
+
+
+Inference[0]: Time 0.040649 GAMMA+P-Invar-based likelihood -365.818785, best rearrangement setting 2
+alpha[0]: 1.199159 invar[0]: 0.114384 rates[0] ac ag at cg ct gt: 0.096080 0.000017 2.183059 0.066944 1.039092 1.000000 
+Inference[1]: Time 0.041025 GAMMA+P-Invar-based likelihood -365.814931, best rearrangement setting 2
+alpha[0]: 1.193182 invar[0]: 0.114192 rates[0] ac ag at cg ct gt: 0.095514 0.000017 2.192232 0.067610 1.046118 1.000000 
+Inference[2]: Time 0.040222 GAMMA+P-Invar-based likelihood -365.819838, best rearrangement setting 2
+alpha[0]: 1.201856 invar[0]: 0.114449 rates[0] ac ag at cg ct gt: 0.096453 0.000017 2.182086 0.066984 1.037627 1.000000 
+Inference[3]: Time 0.040772 GAMMA+P-Invar-based likelihood -365.815704, best rearrangement setting 2
+alpha[0]: 1.201047 invar[0]: 0.114240 rates[0] ac ag at cg ct gt: 0.095491 0.000017 2.183345 0.067273 1.043827 1.000000 
+Inference[4]: Time 0.040564 GAMMA+P-Invar-based likelihood -365.815704, best rearrangement setting 2
+alpha[0]: 1.201047 invar[0]: 0.114240 rates[0] ac ag at cg ct gt: 0.095491 0.000017 2.183345 0.067273 1.043827 1.000000 
+
+
+Conducting final model optimizations on all 5 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -364.570347 tree written to file /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_result.2012-12-12-1355337061.phylip.out.RUN.0
+Inference[1] final GAMMA-based Likelihood: -364.570347 tree written to file /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_result.2012-12-12-1355337061.phylip.out.RUN.1
+Inference[2] final GAMMA-based Likelihood: -364.570347 tree written to file /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_result.2012-12-12-1355337061.phylip.out.RUN.2
+Inference[3] final GAMMA-based Likelihood: -364.570347 tree written to file /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_result.2012-12-12-1355337061.phylip.out.RUN.3
+Inference[4] final GAMMA-based Likelihood: -364.570347 tree written to file /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_result.2012-12-12-1355337061.phylip.out.RUN.4
+
+
+Starting final GAMMA-based thorough Optimization on tree 2 likelihood -364.570347 .... 
+
+Final GAMMA-based Score of best tree -364.570347
+
+Program execution info written to /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_info.2012-12-12-1355337061.phylip.out
+Best-scoring ML tree written to: /home/elviscat/projects/workflows/2012-12-12-1355337111/RAxML_bestTree.2012-12-12-1355337061.phylip.out
+
+Overall execution time: 0.310865 secs or 0.000086 hours or 0.000004 days
+

@@ -1,0 +1,53 @@
+class InlinehelpersController < ApplicationController
+
+
+
+  # GET /inlinehelpers/1
+  # GET /inlinehelpers/1.json
+
+  def show
+    task_id = params[:id]
+    puts 'task_id is ::' + task_id.to_s
+    
+    @wtask = Wtask.find(task_id)
+    @wexec = Wexec.find(@wtask.exe_id)
+    @wexec_paras = WexecPara.all
+
+
+  end
+
+  
+  def create
+    wtask_id = params[:wtask_id]
+    exe_id = params[:exe_id]
+    puts 'exe_id is ::' + exe_id.to_s
+    @wexec_paras = WexecPara.where( :wexec_id => exe_id)
+    
+    results = ''
+    @wexec_paras.each do |wexec_para|
+      
+      results += wexec_para.pname + ' ' + params[wexec_para.pname] + ' '
+    end
+
+    @wtask = Wtask.find(wtask_id)
+    if @wtask.update_attribute('inline', results)
+      puts "Successfully updated wtask.inline."
+    else
+      puts 'Fail'
+    end
+
+
+    #results += '<br>' + '<a href=/wtasks/'+wtask_id+'/edit>Back to Task edit</a>'
+    system 'ruby restclient_ex1.rb'
+
+    respond_to do |format|
+      #format.html # index.html.erb
+      #format.html { render json: results }
+      format.html { redirect_to '/wtasks/'+wtask_id }
+    end
+
+
+  end
+
+
+end

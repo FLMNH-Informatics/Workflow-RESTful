@@ -1,0 +1,9 @@
+<% title "Edit Workflow Task Port" %>
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Show", @wtask_port %> |
+  <%= link_to "View All", wtask_ports_path %> |
+  <%= link_to "Back to task", '../../wtasks/'+@wtask_port.wtask_id.to_s %>
+</p>

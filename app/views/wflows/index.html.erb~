@@ -1,0 +1,25 @@
+<% title "Workflow List" %>
+
+<table border="1" width="1024">
+  <tr>
+    <th>Name</th>
+    <th>Desc</th>
+    <th>Owner</th>
+    <th>Operation</th>
+  </tr>
+  <% for wflow in @wflows %>
+    <tr>
+      <td><%= wflow.name %></td>
+      <td><%= wflow.desc %></td>
+      <td><%= wflow.owner %></td>
+      
+      <td colspan="4"><%= link_to "Show", wflow %> 
+        <%= link_to "Edit", edit_wflow_path(wflow) %> 
+        <%= link_to 'Add a new task', new_wtask_path(:wflow_id=>wflow) %> 
+        <%= button_to 'delete', wflow_path(wflow), :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Add a New Workflow", new_wflow_path %></p>

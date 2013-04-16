@@ -1,0 +1,16 @@
+<% title "Wexec" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wexec.name %>
+</p>
+<p>
+  <strong>Eloc:</strong>
+  <%= @wexec.eloc %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_wexec_path(@wexec) %> |
+  <%= link_to "Destroy", @wexec, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", wexecs_path %>
+</p>

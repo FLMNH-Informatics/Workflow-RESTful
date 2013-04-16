@@ -1,0 +1,91 @@
+                wexec_paras GET    /wexec_paras(.:format)                           {:action=>"index", :controller=>"wexec_paras"}
+                            POST   /wexec_paras(.:format)                           {:action=>"create", :controller=>"wexec_paras"}
+             new_wexec_para GET    /wexec_paras/new(.:format)                       {:action=>"new", :controller=>"wexec_paras"}
+            edit_wexec_para GET    /wexec_paras/:id/edit(.:format)                  {:action=>"edit", :controller=>"wexec_paras"}
+                 wexec_para GET    /wexec_paras/:id(.:format)                       {:action=>"show", :controller=>"wexec_paras"}
+                            PUT    /wexec_paras/:id(.:format)                       {:action=>"update", :controller=>"wexec_paras"}
+                            DELETE /wexec_paras/:id(.:format)                       {:action=>"destroy", :controller=>"wexec_paras"}
+                     wexecs GET    /wexecs(.:format)                                {:action=>"index", :controller=>"wexecs"}
+                            POST   /wexecs(.:format)                                {:action=>"create", :controller=>"wexecs"}
+                  new_wexec GET    /wexecs/new(.:format)                            {:action=>"new", :controller=>"wexecs"}
+                 edit_wexec GET    /wexecs/:id/edit(.:format)                       {:action=>"edit", :controller=>"wexecs"}
+                      wexec GET    /wexecs/:id(.:format)                            {:action=>"show", :controller=>"wexecs"}
+                            PUT    /wexecs/:id(.:format)                            {:action=>"update", :controller=>"wexecs"}
+                            DELETE /wexecs/:id(.:format)                            {:action=>"destroy", :controller=>"wexecs"}
+               wflow_wtasks GET    /wflows/:wflow_id/wtasks(.:format)               {:action=>"index", :controller=>"wtasks"}
+                            POST   /wflows/:wflow_id/wtasks(.:format)               {:action=>"create", :controller=>"wtasks"}
+            new_wflow_wtask GET    /wflows/:wflow_id/wtasks/new(.:format)           {:action=>"new", :controller=>"wtasks"}
+           edit_wflow_wtask GET    /wflows/:wflow_id/wtasks/:id/edit(.:format)      {:action=>"edit", :controller=>"wtasks"}
+                wflow_wtask GET    /wflows/:wflow_id/wtasks/:id(.:format)           {:action=>"show", :controller=>"wtasks"}
+                            PUT    /wflows/:wflow_id/wtasks/:id(.:format)           {:action=>"update", :controller=>"wtasks"}
+                            DELETE /wflows/:wflow_id/wtasks/:id(.:format)           {:action=>"destroy", :controller=>"wtasks"}
+                     wflows GET    /wflows(.:format)                                {:action=>"index", :controller=>"wflows"}
+                            POST   /wflows(.:format)                                {:action=>"create", :controller=>"wflows"}
+                  new_wflow GET    /wflows/new(.:format)                            {:action=>"new", :controller=>"wflows"}
+                 edit_wflow GET    /wflows/:id/edit(.:format)                       {:action=>"edit", :controller=>"wflows"}
+                      wflow GET    /wflows/:id(.:format)                            {:action=>"show", :controller=>"wflows"}
+                            PUT    /wflows/:id(.:format)                            {:action=>"update", :controller=>"wflows"}
+                            DELETE /wflows/:id(.:format)                            {:action=>"destroy", :controller=>"wflows"}
+          wtask_wtask_ports GET    /wtasks/:wtask_id/wtask_ports(.:format)          {:action=>"index", :controller=>"wtask_ports"}
+                            POST   /wtasks/:wtask_id/wtask_ports(.:format)          {:action=>"create", :controller=>"wtask_ports"}
+       new_wtask_wtask_port GET    /wtasks/:wtask_id/wtask_ports/new(.:format)      {:action=>"new", :controller=>"wtask_ports"}
+      edit_wtask_wtask_port GET    /wtasks/:wtask_id/wtask_ports/:id/edit(.:format) {:action=>"edit", :controller=>"wtask_ports"}
+           wtask_wtask_port GET    /wtasks/:wtask_id/wtask_ports/:id(.:format)      {:action=>"show", :controller=>"wtask_ports"}
+                            PUT    /wtasks/:wtask_id/wtask_ports/:id(.:format)      {:action=>"update", :controller=>"wtask_ports"}
+                            DELETE /wtasks/:wtask_id/wtask_ports/:id(.:format)      {:action=>"destroy", :controller=>"wtask_ports"}
+                     wtasks GET    /wtasks(.:format)                                {:action=>"index", :controller=>"wtasks"}
+                            POST   /wtasks(.:format)                                {:action=>"create", :controller=>"wtasks"}
+                  new_wtask GET    /wtasks/new(.:format)                            {:action=>"new", :controller=>"wtasks"}
+                 edit_wtask GET    /wtasks/:id/edit(.:format)                       {:action=>"edit", :controller=>"wtasks"}
+                      wtask GET    /wtasks/:id(.:format)                            {:action=>"show", :controller=>"wtasks"}
+                            PUT    /wtasks/:id(.:format)                            {:action=>"update", :controller=>"wtasks"}
+                            DELETE /wtasks/:id(.:format)                            {:action=>"destroy", :controller=>"wtasks"}
+                wtask_ports GET    /wtask_ports(.:format)                           {:action=>"index", :controller=>"wtask_ports"}
+                            POST   /wtask_ports(.:format)                           {:action=>"create", :controller=>"wtask_ports"}
+             new_wtask_port GET    /wtask_ports/new(.:format)                       {:action=>"new", :controller=>"wtask_ports"}
+            edit_wtask_port GET    /wtask_ports/:id/edit(.:format)                  {:action=>"edit", :controller=>"wtask_ports"}
+                 wtask_port GET    /wtask_ports/:id(.:format)                       {:action=>"show", :controller=>"wtask_ports"}
+                            PUT    /wtask_ports/:id(.:format)                       {:action=>"update", :controller=>"wtask_ports"}
+                            DELETE /wtask_ports/:id(.:format)                       {:action=>"destroy", :controller=>"wtask_ports"}
+              inlinehelpers GET    /inlinehelpers(.:format)                         {:action=>"index", :controller=>"inlinehelpers"}
+                            POST   /inlinehelpers(.:format)                         {:action=>"create", :controller=>"inlinehelpers"}
+           new_inlinehelper GET    /inlinehelpers/new(.:format)                     {:action=>"new", :controller=>"inlinehelpers"}
+          edit_inlinehelper GET    /inlinehelpers/:id/edit(.:format)                {:action=>"edit", :controller=>"inlinehelpers"}
+               inlinehelper GET    /inlinehelpers/:id(.:format)                     {:action=>"show", :controller=>"inlinehelpers"}
+                            PUT    /inlinehelpers/:id(.:format)                     {:action=>"update", :controller=>"inlinehelpers"}
+                            DELETE /inlinehelpers/:id(.:format)                     {:action=>"destroy", :controller=>"inlinehelpers"}
+    workflowxmlbuildhelpers GET    /workflowxmlbuildhelpers(.:format)               {:action=>"index", :controller=>"workflowxmlbuildhelpers"}
+                            POST   /workflowxmlbuildhelpers(.:format)               {:action=>"create", :controller=>"workflowxmlbuildhelpers"}
+ new_workflowxmlbuildhelper GET    /workflowxmlbuildhelpers/new(.:format)           {:action=>"new", :controller=>"workflowxmlbuildhelpers"}
+edit_workflowxmlbuildhelper GET    /workflowxmlbuildhelpers/:id/edit(.:format)      {:action=>"edit", :controller=>"workflowxmlbuildhelpers"}
+     workflowxmlbuildhelper GET    /workflowxmlbuildhelpers/:id(.:format)           {:action=>"show", :controller=>"workflowxmlbuildhelpers"}
+                            PUT    /workflowxmlbuildhelpers/:id(.:format)           {:action=>"update", :controller=>"workflowxmlbuildhelpers"}
+                            DELETE /workflowxmlbuildhelpers/:id(.:format)           {:action=>"destroy", :controller=>"workflowxmlbuildhelpers"}
+                    muscles GET    /muscles(.:format)                               {:action=>"index", :controller=>"muscles"}
+                            POST   /muscles(.:format)                               {:action=>"create", :controller=>"muscles"}
+                 new_muscle GET    /muscles/new(.:format)                           {:action=>"new", :controller=>"muscles"}
+                edit_muscle GET    /muscles/:id/edit(.:format)                      {:action=>"edit", :controller=>"muscles"}
+                     muscle GET    /muscles/:id(.:format)                           {:action=>"show", :controller=>"muscles"}
+                            PUT    /muscles/:id(.:format)                           {:action=>"update", :controller=>"muscles"}
+                            DELETE /muscles/:id(.:format)                           {:action=>"destroy", :controller=>"muscles"}
+              fasta2phylips GET    /fasta2phylips(.:format)                         {:action=>"index", :controller=>"fasta2phylips"}
+                            POST   /fasta2phylips(.:format)                         {:action=>"create", :controller=>"fasta2phylips"}
+           new_fasta2phylip GET    /fasta2phylips/new(.:format)                     {:action=>"new", :controller=>"fasta2phylips"}
+          edit_fasta2phylip GET    /fasta2phylips/:id/edit(.:format)                {:action=>"edit", :controller=>"fasta2phylips"}
+               fasta2phylip GET    /fasta2phylips/:id(.:format)                     {:action=>"show", :controller=>"fasta2phylips"}
+                            PUT    /fasta2phylips/:id(.:format)                     {:action=>"update", :controller=>"fasta2phylips"}
+                            DELETE /fasta2phylips/:id(.:format)                     {:action=>"destroy", :controller=>"fasta2phylips"}
+                     raxmls GET    /raxmls(.:format)                                {:action=>"index", :controller=>"raxmls"}
+                            POST   /raxmls(.:format)                                {:action=>"create", :controller=>"raxmls"}
+                  new_raxml GET    /raxmls/new(.:format)                            {:action=>"new", :controller=>"raxmls"}
+                 edit_raxml GET    /raxmls/:id/edit(.:format)                       {:action=>"edit", :controller=>"raxmls"}
+                      raxml GET    /raxmls/:id(.:format)                            {:action=>"show", :controller=>"raxmls"}
+                            PUT    /raxmls/:id(.:format)                            {:action=>"update", :controller=>"raxmls"}
+                            DELETE /raxmls/:id(.:format)                            {:action=>"destroy", :controller=>"raxmls"}
+                   runtasks GET    /runtasks(.:format)                              {:action=>"index", :controller=>"runtasks"}
+                            POST   /runtasks(.:format)                              {:action=>"create", :controller=>"runtasks"}
+                new_runtask GET    /runtasks/new(.:format)                          {:action=>"new", :controller=>"runtasks"}
+               edit_runtask GET    /runtasks/:id/edit(.:format)                     {:action=>"edit", :controller=>"runtasks"}
+                    runtask GET    /runtasks/:id(.:format)                          {:action=>"show", :controller=>"runtasks"}
+                            PUT    /runtasks/:id(.:format)                          {:action=>"update", :controller=>"runtasks"}
+                            DELETE /runtasks/:id(.:format)                          {:action=>"destroy", :controller=>"runtasks"}

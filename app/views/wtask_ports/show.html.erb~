@@ -1,0 +1,25 @@
+<% title "Workflow Task Port Set up" %>
+
+<p>
+  <strong>Workflow Task ID:</strong>
+  <%= @wtask_port.wtask_id %>
+</p>
+<p>
+  <strong>Port Type:</strong>
+  <% if @wtask_port.ptype == 0 %>
+  <%= "Input" %>
+  <% else %>
+  <%= "Output" %>
+  <% end %>
+</p>
+<p>
+  <strong>Port location:</strong>
+  <%= @wtask_port.ploc %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_wtask_port_path(@wtask_port) %> |
+  <!--<%= link_to "Destroy", @wtask_port, :confirm => 'Are you sure?', :method => :delete %> |-->
+  <%= link_to "View All", wtask_ports_path %> |
+  <%= link_to "Back to task", '../../wtasks' %>
+</p>

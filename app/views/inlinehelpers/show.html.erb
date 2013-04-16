@@ -1,0 +1,77 @@
+
+<% title 'Inline Helper' %>
+<!--<%= @wflow.wfolder  %>-->
+<!--<%= @wtask.exe_id %>-->
+<!--<h2><%= 'Inline Helper' %></h2><br>-->
+<h2><%= @wexec.name + ' ' + 'Inline Configuration' %></h2>
+<br>
+<br>
+<%= form_tag("/inlinehelpers", :method => "post") do %>
+  <% @wexec_paras.each do |wexec_para| %>
+    <% if wexec_para.wexec_id == @wtask.exe_id %>
+      <%= wexec_para.pcaption %>
+      <!--<%= wexec_para.id %>-->
+      <!--<%= wexec_para.pname %>-->
+
+
+      <!--<%= wexec_para.ptype %>-->
+      <% if wexec_para.ptype == 'input' %>
+        <!--<%= 'INPUT' %>-->
+        <!--<%= Dir.getwd %>-->
+
+
+        <% selectone_array = [] %>
+        <% a= @wflow.wfolder.to_s() %>
+        <% a = a[0..-2] %>
+        <% b = Dir.getwd + "/public/services/workflows/" + a %>
+        <!--<%= b %>-->
+        <% dir_contents = Dir.entries(b) %>
+        <!--<%= dir_contents %>-->
+        <% dir_contents.each do |c| %>
+          <% selectone_option_array = [] %>
+          <% if c != '.' && c != '..' %>
+            <% selectone_option_array.push(c) %>
+            <% selectone_option_array.push(b+'/'+c) %>
+            <% selectone_array.push(selectone_option_array) %>
+          <% end %>
+        <% end %>
+        <%= select_tag(wexec_para.pname,options_for_select(selectone_array)) %><br>
+      <% elsif wexec_para.ptype == 'text' %>
+        <%= text_field_tag(wexec_para.pname) %><br>
+      <% elsif wexec_para.ptype == 'selectone' %>
+        <% selectone_string = '' %>
+        <% selectone_string += '[' %>
+        <% selectone_array = [] %>
+        <% wexec_para.select_list.split(';').each do |a| %>
+          <% selectone_option_array = [] %>
+          <% selectone_string += '[' %>
+          <% a.split(":").each do |b| %>
+            <% selectone_string += "'"+b+"'"+"," %>
+            <% selectone_option_array.push(b) %>
+          <% end %>
+          <% selectone_string = selectone_string[0..-2] %>
+          <% selectone_array.push(selectone_option_array) %>
+          <% selectone_string += ']' %>
+          
+        <% end %>
+        <% selectone_string += ']' %>
+        <!--<%= selectone_string %>-->
+        <%= select_tag(wexec_para.pname,options_for_select(selectone_array)) %><br>
+      <% end %>    
+    <% end %>
+  <% end %>
+  <%= hidden_field_tag("exe_id", @wtask.exe_id) %>
+  <%= hidden_field_tag("wtask_id", @wtask.id) %>
+  <%= submit_tag("Build!") %>
+<% end %>
+
+
+
+
+
+
+
+
+    
+
+

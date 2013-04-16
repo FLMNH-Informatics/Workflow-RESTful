@@ -1,0 +1,125 @@
+# app/controllers/muscles_controller.rb
+
+class MusclesController < ApplicationController
+  # GET /muscles
+  # GET /muscles.json
+  def index
+    #a = [ 1, "cat", 3.14 ]
+    respond_to do |format|
+      format.html # index.html.erb
+      #format.json { render json: a }
+    end
+  end
+
+
+  # GET /muscles/1
+  # GET /muscles/1.json
+  def show
+    puts 'Hello'
+    '
+    job_id = params[:id]
+
+    #show_doc_type = params[:show_doc_type]
+
+
+    sequence = "/services/rest/muscle/result/"+job_id.to_s+"/sequence.txt"
+    output = "/services/rest/muscle/result/"+job_id.to_s+"/"+job_id.to_s+".output"
+    alignment_file = "/services/rest/muscle/result/"+job_id.to_s+"/"+job_id.to_s+".alignment"
+
+
+    results= { "sequence" => sequence, "output" => output, "alignment_file" => alignment_file}
+    #puts a
+
+
+
+    #redirect_to a
+    respond_to do |format|
+      #format.html { render :json job_id } # equal to format.html { render json: job_id }
+      format.html { render json: results.to_json }
+      format.json { render json: results.to_json }
+      #  format.html # index.html.erb
+      #  format.json { render json: a }
+    end
+    '
+  end
+
+
+  # POST /muscles
+  # POST /muscles.json
+  def create
+
+    results = ''
+
+    uploaded_io = params[:fileParam]
+    output_format = params[:output_format]
+
+
+    if uploaded_io
+      #puts 'Yes'
+      
+      #puts uploaded_io.content_type
+      #puts uploaded_io.headers
+      
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file| #read the uploaded file as 
+        file.write(uploaded_io.read)
+      end
+
+      dirname = `./job_builder.sh`
+      filename = ''
+      filename = uploaded_io.original_filename
+      mv_command = "mv public/uploads/" + uploaded_io.original_filename + " " + dirname
+
+      system mv_command
+      #system "mv sequence.txt "+ dirname
+
+      seq_dest = dirname.chomp+"/" + filename
+      output_dest = dirname.chomp+"/"+dirname.chomp+".output"
+
+      align_dest = dirname.chomp+"/"+dirname.chomp+".alignment"
+      puts 'sequence destination is ::' + seq_dest
+      system "./muscle3.8.31_i86linux64 -in "+seq_dest+" -verbose -log "+output_dest+" -quiet " + output_format + " -out "+align_dest+" -group"
+      #system "./muscle3.8.31_i86linux64 -in "+seq_dest+" -verbose -log "+output_dest+" -quiet " + output_format + " -out "+align_dest+" -group"
+      system "mv "+dirname.chomp+"/ public/services/rest/muscle/result/"
+
+      server_name = request.env["SERVER_NAME"]
+      server_port = request.env["SERVER_PORT"]
+      puts server_name + ':' + server_port
+
+      job_id = dirname.chomp
+      #results = title + ' ::222:: ' + eml_address
+      #results= { "job_id" => dirname.chomp }
+      #results= { "job_id" => job_id }
+      results = 'Successfully submitted!<br><br>Please go to the following links to check your submitted results:<br>'
+      results += '<a href="/services/rest/muscle/result/'+ job_id + '/'+ job_id + '.alignment">Aligned File</a><br>'
+      results += '<a href="/services/rest/muscle/result/'+ job_id + '/'+ job_id + '.output">Output</a><br>'
+
+    else
+      #puts 'No'
+      results = 'Fail! No input.'
+    end
+
+
+    respond_to do |format|
+      #format.html { render 'Was successfully created.' }#is that correct?
+      #format.html { render 'Successfully submitted! Please go to the following links to check your submitted results:<br><a href="/services/rest/muscle/result/'+ job_id + '">Aligned File</a><br><a href="">Output</a>' }
+
+      format.html { render json: results }
+      #format.html { render json: results.to_json }
+      #format.json { render json: results.to_json }
+
+      #if b
+      #format.html { render b }
+      ##format.html { render 'Person was successfully created.' }
+      #format.json { render json: b }
+      #else
+      #format.html { render b }
+      ##format.html { render 'Not created.' }
+      #format.json { render json: b }
+      #end
+    end
+
+
+  end
+
+end
+

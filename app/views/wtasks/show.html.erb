@@ -1,0 +1,72 @@
+<% title "Workflow Task" %>
+
+<p>
+  <strong>Task Name:</strong>
+  <%= @wtask.name %>
+</p>
+
+<p>
+  <strong>Workflow ID:</strong>
+  <%= @wtask.wflow_id %>
+</p>
+<p>
+  <strong>Execution Program:</strong>
+  <!--<%= @wtask.exe_id %>-->
+  <% @wexecs.each do |wexec| %>
+    <% if wexec.id == @wtask.exe_id %>
+    <%= wexec.name %>
+    <% end %>
+  <% end %>
+
+</p>
+<p>
+  <strong>Inline:</strong>
+  <%= @wtask.inline %>
+</p>
+
+<p>
+  <strong>Task Port List:</strong>
+</p>
+
+<table border="1">
+  <tr>
+    <td>Port Name</td>
+    <td>Type</td>
+    <td>Location</td>
+    
+  </tr>
+  <tr>
+  <% @wtask.wtask_ports.each do |wtask_ports| %>
+    <td>
+      <%= wtask_ports.pname %>
+    </td>
+    <td>
+      <% if wtask_ports.ptype == 0 %>
+        <%= link_to 'Input Port', wtask_port_path(wtask_ports.id) %>
+      <% else %>
+        <%= link_to 'Output Port', wtask_port_path(wtask_ports.id) %>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to wtask_ports.ploc, wtask_ports.ploc %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Add a new task port in this workflow task', new_wtask_port_path(:wtask_id=>@wtask) %><br><br>
+
+
+
+  <%= link_to "Edit", edit_wtask_path(@wtask) %> |
+  <!--<%= link_to "Destroy", @wtask, :confirm => 'Are you sure?', :method => :delete %> |-->
+  <%= link_to "View All", wtasks_path %> |
+  <%= link_to "Back to workflow", '../../wflows/'+@wtask.wflow_id.to_s %>
+</p>
+
+
+
+
+
+

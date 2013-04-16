@@ -1,0 +1,78 @@
+class WorkflowxmlbuildhelpersController < ApplicationController
+
+
+
+  # GET /inlinehelpers/1
+  # GET /inlinehelpers/1.json
+
+  def show
+    task_id = params[:id]
+    puts 'task_id is ::' + task_id.to_s
+    
+    @wtask = Wtask.find(task_id)
+    @wexec = Wexec.find(@wtask.exe_id)
+    @wexec_paras = WexecPara.all
+    
+
+  end
+
+  
+  def create
+    wflow_id = params[:wflow_id]
+    @wflow = Wflow.find(wflow_id)
+    @wtasks = Wtask.where( :wflow_id => wflow_id)
+    
+    results = ''
+    results += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+    results += "<workflow>\n"
+    results += "\t<workflow_name>" + @wflow.name + "</workflow_name>\n"
+    results += "\t<workflow_description>" + @wflow.desc + "</workflow_description>\n"    
+    results += "\t<tasks>\n"
+
+    @wtasks.each do |wtask|
+      @wexec = Wexec.where( :exec_id => wtask.exe_id)
+      results += "\t\t<task>\n"
+      results += "\t\t\t<task_exec_name>" + @wexec.name + "</task_exec_name>\n"
+      results += "\t\t\t<task_exec_inline>" + wtask.inline.to_s + "\n\t\t</task_exec_inline>\n"
+      
+      #results += wexec_para.pname + ' ' + params[wexec_para.pname] + ' '
+      @wtask_ports = WtaskPort.where( :wtask_id => wtask.id)
+      @wtask_ports.each do |wtask_port|
+        results += "\t\t\t<ports>\n"
+        results += "\t\t\t\t<port>\n"
+        ptype_str = ''
+        if wtask_port.ptype == 0
+          ptype_str = "Input"
+        else
+          ptype_str = "Output"
+        end
+        results += "\t\t\t\t\t<port_type>" + ptype_str + "</port_type>\n"
+        
+
+        results += "\t\t\t\t\t<port_location>" + wtask_port.ploc.to_s + "</port_location>\n"
+        results += "\t\t\t\t</port>\n"
+        results += "\t\t\t</ports>\n"
+      end
+      results += "\t\t</task>\n"
+    end
+    results += "\t</tasks>\n"
+    results += "</workflow>\n"
+
+    respond_to do |format|
+      #format.html # create.html.erb
+      #format.xml # create.xml.builder
+      #format.html { render json: @wtasks }
+      
+      #format.html { render xml: @wtasks.to_xml } #Yes
+      format.html { render xml: results } #Yes
+      #format.xml { render xml: @wtasks.to_xml } #!?!?
+      
+      #format.html { render json: results }
+
+    end
+
+
+  end
+
+
+end

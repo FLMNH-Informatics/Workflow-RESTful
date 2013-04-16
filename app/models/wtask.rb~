@@ -1,0 +1,6 @@
+class Wtask < ActiveRecord::Base
+  attr_accessible :wflow_id, :exe_id, :inline
+  has_many :wtask_ports
+  belongs_to :wflow
+  belongs_to :wexec
+end

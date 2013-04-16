@@ -1,0 +1,9 @@
+<% title "Edit Wtask" %>
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Show", @wtask %> |
+  <%= link_to "View All", wtasks_path %> |
+  <%= link_to "Back to workflow", '../wflows/'+@wtask.wflow_id.to_s %>
+</p>

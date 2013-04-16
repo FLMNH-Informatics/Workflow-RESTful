@@ -1,0 +1,50 @@
+class WtaskPortsController < ApplicationController
+  def index
+    @wtask_ports = WtaskPort.all
+  end
+
+  def show
+    @wtask_port = WtaskPort.find(params[:id])
+  end
+
+  def new
+    wtask_id = params[:wtask_id]
+    puts 'wtask_id is ::'
+    puts wtask_id
+    @wtask_port = WtaskPort.new
+    @wtask_port['wtask_id'] = wtask_id
+
+    puts @wtask_port['wtask_id']
+
+
+
+  end
+
+  def create
+    @wtask_port = WtaskPort.new(params[:wtask_port])
+    if @wtask_port.save
+      redirect_to @wtask_port, :notice => "Successfully created wtask port."
+    else
+      render :action => 'new'
+    end
+  end
+
+  def edit
+    @wtask_port = WtaskPort.find(params[:id])
+  end
+
+  def update
+    @wtask_port = WtaskPort.find(params[:id])
+    if @wtask_port.update_attributes(params[:wtask_port])
+      redirect_to @wtask_port, :notice  => "Successfully updated wtask port."
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    @wtask_port = WtaskPort.find(params[:id])
+    @wtask_port.destroy
+    redirect_to wtask_ports_url, :notice => "Successfully destroyed wtask port."
+  end
+end

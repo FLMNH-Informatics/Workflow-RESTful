@@ -1,0 +1,1000 @@
+  707  vi ruby_rest_client_test1.rb 
+  708  ruby ruby_rest_client_test1.rb 
+  709  ls -al
+  710  ruby workbench.rb 
+  711  ls
+  712  ls -al
+  713  vi workbench.rb
+  714  vi Muscle.rb
+  715  ruby workbench.rb
+  716  ls -al
+  717  ruby workbench.rb
+  718  clear
+  719  ruby workbench.rb
+  720  gem install rdialog
+  721  ruby workbench.rb
+  722  ruby workbench.rb -t 111
+  723  ruby workbench.rb -t 111 1 pm
+  724  ruby workbench.rb -m -t 111 1 
+  725  ruby workbench.rb -t 111 1 pm
+  726  ruby workbench.rb -m -t 111 222 -s
+  727  ruby workbench.rb -s a.fasta -m muscle -p raxml
+  728  ruby workbench.rb -s example.fasta -m muscle -p raxml
+  729  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @ebi_muscle_rest_input_example_1.xml  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  730  curl -i -H "Accept: application/json" -X POST -d "sequence=gi|123456781|gb|JX123451.1| Aus bus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  731  CTTCGGATCCCTACTTGGATTATGTTTAATTACCCAAATTCTAACCGGTCTATTCCTAGC
+  732  >gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  733  CATACACTACACCTCAGACATTTCAACTGCATTCTCTTCAGTAATACACATTTGCCGAGA
+  734  >gi|123456783|gb|JX123453.1| Aus dus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  735  CGTCAACTACGGATGACTAATCCGAAATATTCATGCCAACGGCGCATCTTTCTTCTTTAT
+  736  >gi|123456784|gb|JX123454.1| Aus eus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  737  CTGCCTCTACATACACATCGCCCGAGGCTTATATTACGGGTCTTACCTTTACATAGAAAC
+  738  >gi|123456785|gb|JX123455.1| 
+  739  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @ebi_muscle_rest_input_example_2.xml  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  740  curl -v -H "Content-Type: application/xml" -X POST --data "@ebi_muscle_rest_input_example_2.xml"  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/ 
+  741  http://www.ebi.ac.uk/Tools/services/rest/kalign/parameterdetails/sequence
+  742  crul http://www.ebi.ac.uk/Tools/services/rest/kalign/parameterdetails/sequence
+  743  curl http://www.ebi.ac.uk/Tools/services/rest/kalign/parameterdetails/$parameterId 
+  744  curl http://www.ebi.ac.uk/Tools/services/rest/kalign/parameterdetails/sequence
+  745  curl -v -H "Content-Type: application/xml" -X POST --data "@ebi_muscle_rest_input_example_2.xml"  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  746  curl -v -H "Content-Type: application/xml" --data "@ebi_muscle_rest_input_example_2.xml"  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/ 
+  747  curl -v -H "Content-Type: application/xml" -X POST --data "@ebi_muscle_rest_input_example_2.xml"  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/ curl -I -X POST http://www.ebi.ac.uk/Tools/services/rest/muscle/run/?sequence=gi|123456781|gb|JX123451.1| Aus bus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  748  CTTCGGATCCCTACTTGGATTATGTTTAATTACCCAAATTCTAACCGGTCTATTCCTAGC
+  749  >gi|123456782|gb|JX123452.1| Aus cus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  750  CATACACTACACCTCAGACATTTCAACTGCATTCTCTTCAGTAATACACATTTGCCGAGA
+  751  >gi|123456783|gb|JX123453.1| Aus dus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  752  CGTCAACTACGGATGACTAATCCGAAATATTCATGCCAACGGCGCATCTTTCTTCTTTAT
+  753  >gi|123456784|gb|JX123454.1| Aus eus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  754  CTGCCTCTACATACACATCGCCCGAGGCTTATATTACGGGTCTTACCTTTACATAGAAAC
+  755  >gi|123456785|gb|JX123455.1| Aus fus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  756  CTGAAATATTGGAGTAATTCTCTTCCTACTAGTTATAATAACAGCCTTCGTAGGATACGT
+  757  curl -I -X POST http://www.ebi.ac.uk/Tools/services/rest/muscle/run/?sequence=gi|123456781|gb|JX123451.1| Aus bus XXX cytochrome b (cytb) gene, partial cds; mitochondrial
+  758  curl -I -X POST http://www.ebi.ac.uk/Tools/services/rest/muscle/run/?email=elviscat@gmail.com
+  759  curl -v -H "Content-Type: application/xml" --data "@ebi_muscle_rest_input_example_2.xml" http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  760  curl -v -H "Content-Type: application/xml" --data "@ebi_muscle_rest_input_example_1.xml" http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  761  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @ebi_muscle_rest_input_example_2.xml  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  762  curl -v -H "Content-Type: application/xml; charset=utf-8" -X POST --data-ascii @ebi_muscle_rest_input_example_2.xml  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  763  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @ebi_muscle_rest_input_example_2.xml  http://www.ebi.ac.uk/Tools/services/rest/muscle/run/
+  764  ls
+  765  ruby muscle_client.rb -s fasta.xml
+  766  ruby muscle_client.rb -s muscle.xml
+  767  ruby seq_xml_builder.rb -x muscle_1.xml -s example.fasta
+  768  ruby muscle_client.rb -s muscle.xml
+  769  exit
+  770  rvm use 1.9.2
+  771  ruby -v
+  772  cd projects/tolkin_web_service_dev_2
+  773  ls
+  774  rails s
+  775  clear
+  776  rails s
+  777  exit
+  778  pwd
+  779  cd ..
+  780  ls
+  781  cd ..
+  782  ls
+  783  cd Desktop/
+  784  ls
+  785  cd BEASTv1.7.3/
+  786  ls
+  787  vi README.txt 
+  788  ls
+  789  cd bin
+  790  ls
+  791  man beast
+  792  beast
+  793  ./beast
+  794  java -jar beast.jar
+  795  cd ..
+  796  ls
+  797  vi README.txt 
+  798  java -jar lib/beast.jar
+  799  cd lib
+  800  ls
+  801  cd ..
+  802  cd bin
+  803  ls
+  804  beauti
+  805  ls
+  806  beauti
+  807  ls
+  808  beast
+  809  ./beauti
+  810  exit
+  811  ssh -l elviscat tolkin-web-dev
+  812  exit
+  813  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  814  ls
+  815  bundle update
+  816  bundle gem update
+  817  bundle gem install
+  818  ruby -v
+  819  rvm use 1.9.2
+  820  bundle update
+  821  bundle install
+  822  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  823  history > command_history.txt
+  824  bundle update
+  825  bundle install
+  826  bundle install --no-deployment
+  827  bundle update
+  828  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  829  curl http://localhost:3000/raxml/2012-09-19-1348081542
+  830  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @raxml.xml http://localhost:3000/raxml
+  831  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustal2.xml http://localhost:3000/clustalw2
+  832  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  833  curl -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  834  curl -H "Content-Type: application/xml; charset=utf-8" --data-ascii @raxml.xml http://localhost:3000/raxml
+  835  curl -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  836  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  837  ls
+  838  ls -al
+  839  chmod 655 clustalo-1.1.0-linux-64 
+  840  ls -al
+  841  chmod 755 clustalo-1.1.0-linux-64 
+  842  ls -al
+  843  clear
+  844  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  845  bundle update
+  846  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  847  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalo.xml http://localhost:3000/clustalo
+  848  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  849  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalo.xml http://localhost:3000/clustalo
+  850  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @clustalw2.xml http://localhost:3000/clustalw2
+  851  cd projects
+  852  cd tolkin_web_service_dev_2
+  853  ./clustalw2  example.fasta
+  854  ./clustalw2  example.fasta -type=DNA -align -output=phylip -outorder=aligned
+  855  rails s
+  856  rvm -use 1.9.2
+  857  rvm use 1.9.2
+  858  ruby -v
+  859  rails s
+  860  ls
+  861  clustalw2 example.fasta -stats=stats.txt -type=dna -output=msf -outorder=aligned
+  862  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=msf -outorder=aligned
+  863  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=selex -outorder=aligned
+  864  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=gcg -outorder=aligned
+  865  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=aln2 -outorder=aligned
+  866  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=aln1 -outorder=aligned
+  867  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=aln -outorder=aligned
+  868  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=gcg -outorder=aligned
+  869  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=nexus -outorder=aligned
+  870  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=pir -outorder=aligned
+  871  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=gde -outorder=aligned
+  872  ./clustalw2 example.fasta -stats=stats.txt -type=dna -output=fasta -outorder=aligned
+  873  ls -al
+  874  mafft.bat example.fasta > mafft_example.fasta.txt
+  875  ./mafft.bat example.fasta > mafft_example.fasta.txt
+  876  ls
+  877  pwd
+  878  ./mafft.bat example.fasta > mafft_example.fasta.txt
+  879  ls
+  880  ls -alt
+  881  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @mafft.xml http://localhost:3000/mafft.json
+  882  ls
+  883  mafft_client.rb -s mafft.xml
+  884  ruby mafft_client.rb -s mafft.xml
+  885  cd ..
+  886  ls
+  887  cd ..
+  888  ls
+  889  pwd
+  890  cd Downloads/
+  891  ls
+  892  ls -al
+  893  cd mrbayes_3.2.1/
+  894  ls
+  895  cd src
+  896  ls -al
+  897  make Makefile 
+  898  ls -al
+  899  vi CompileInstructions.txt 
+  900  ls -al
+  901  make
+  902  ls
+  903  vi CompileInstructions.txt 
+  904  autoconf 
+  905  ./configure 
+  906  make
+  907  make -f Makefile.in 
+  908  man make
+  909  ./configure 
+  910  sudo apt-get install build-essential autoconf automake libtool subversion pkg-config openjdk-6-jdk
+  911  svn checkout http://beagle-lib.googlecode.com/svn/trunk/ beagle-lib
+  912  c
+  913  cd
+  914  ls
+  915  cd beagle-lib
+  916  ./autogen.sh 
+  917  sh
+  918  ./configure --prefix=$HOME
+  919  make install
+  920  ls
+  921  java -version
+  922  cd ..
+  923  cd Downloads/
+  924  ls
+  925  cd mrbayes_3.2.1/
+  926  cd src
+  927  ls
+  928  ./configure 
+  929  male
+  930  make
+  931  vi ./configure
+  932  ./configure
+  933  vi ./configure
+  934  wpd
+  935  pwd
+  936  cd ..
+  937  ls
+  938  cd ..
+  939  ls
+  940  pwd
+  941  cd ..
+  942  ls
+  943  pwd
+  944  cd beagle-lib/
+  945  pwd
+  946  ls
+  947  pwd
+  948  cd ..
+  949  ls
+  950  cd el
+  951  ls
+  952  pwd
+  953  cd Downloads/mrbayes_3.2.1/src
+  954  ls
+  955  ./configure
+  956  make
+  957  ls
+  958  make
+  959  clear
+  960  make
+  961  ./configure
+  962  make
+  963  ./configure
+  964  make
+  965  make > log.txt
+  966  vi log.txt 
+  967  cd ..
+  968  ls
+  969  cd ,,
+  970  cd ..
+  971  ls
+  972  cd mrbayes_3.2.0
+  973  ls
+  974  cd src
+  975  ./configure
+  976  ls
+  977  autoconf 
+  978  ./configure 
+  979  vi configure
+  980  ./configure 
+  981  vi configure
+  982  ./configure 
+  983  make
+  984  cd ..
+  985  ls
+  986  cd ..
+  987  ls
+  988  cd mrbayes_3.2.0
+  989  cd src
+  990  ls
+  991  ./configure
+  992  ls
+  993  ./configure
+  994  ls a-l
+  995  ls -al
+  996  cd ..
+  997  ls
+  998  pwd
+  999  cd mrbayes_3.2.1/
+ 1000  cd src
+ 1001  ls
+ 1002  autoconf
+ 1003  ./configure
+ 1004  ./configure --with-beagle=no
+ 1005  make
+ 1006  cd ..
+ 1007  ls
+ 1008  cd mrbayes_3.2.1/
+ 1009  cd src
+ 1010  ls
+ 1011  autoconf
+ 1012  ./configure --with_beagle=no
+ 1013  ./configure --with-beagle=no
+ 1014  make
+ 1015  ./mb
+ 1016  mb
+ 1017  cd ..
+ 1018  ls
+ 1019  ls -al
+ 1020  exit
+ 1021  rvm use 1.9.2
+ 1022  ruby -v
+ 1023  cd projects/tolkin_web_service_dev_2
+ 1024  ls
+ 1025  ls -al
+ 1026  bundle update
+ 1027  rails s
+ 1028  exit
+ 1029  cd projects
+ 1030  ls
+ 1031  cd tolkin_web_service_dev_2
+ 1032  ls
+ 1033  rvm use 1.9.2
+ 1034  ruby -v
+ 1035  rails s
+ 1036  exit
+ 1037  ls
+ 1038  cd ..
+ 1039  ls
+ 1040  cd ..
+ 1041  vi 123.txt
+ 1042  curl -s -d "title=test_title" --data-urlencode
+ 1043  curl -s -d "title=test_title" --data-urlencode "upload_file@123.txt" 'http://localhost:3000/mafft'
+ 1044  curl -F "uploaded_file=@123.txt;type=text/plain" http://localhost:3000/mafft
+ 1045  vi /tmp/RackMultipart20120925-4769-171yft9
+ 1046  curl -F "uploaded_file=@123.txt;type=text/plain" http://localhost:3000/mafft
+ 1047  curl -d "title=123" -F "uploaded_file=@123.txt;type=text/plain" http://localhost:3000/mafft
+ 1048  curl -s -d "title=123" -F "uploaded_file=@123.txt;type=text/plain" http://localhost:3000/mafft
+ 1049  cd projects/tolkin_web_service_dev_2
+ 1050  vi petD_alignment_680taxa.nex 
+ 1051  ls -al 
+ 1052  chmod 733 petD_alignment_680taxa.nex 
+ 1053  ls -al
+ 1054  chmod 711 petD_alignment_680taxa.nex 
+ 1055  ls -al
+ 1056  chmod 744 petD_alignment_680taxa.nex 
+ 1057  ls -al
+ 1058  ruby raxml_client.rb -s petD_alignment_680taxa.nex
+ 1059  ruby raxml_client.rb -s petD_alignment_680taxa.phy
+ 1060  ruby -v
+ 1061  rvm use 1.9.2
+ 1062  ruby -v
+ 1063  ruby raxml_client.rb -x raxml.xml -s petD_alignment_680taxa.phy
+ 1064  ruby raxml_client.rb -s raxml.xml
+ 1065  ruby seq_xml_builder.rb -s petD_alignment_680taxa.phy raxml_1.xml 
+ 1066  ruby seq_xml_builder.rb -s petD_alignment_680taxa.phy -x raxml_1.xml
+ 1067  vi petD_alignment_680taxa.phy
+ 1068  vi raxml_1.xml 
+ 1069  vi petD_alignment_680taxa.phy
+ 1070  cd
+ 1071  ls -al
+ 1072  cd downloads
+ 1073  cd Downloads/
+ 1074  mb mrbayesINPUT.nex 
+ 1075  cd CAMPANULACEAE/
+ 1076  cd seqs/
+ 1077  ls
+ 1078  cd nico_seqs/
+ 1079  ls
+ 1080  vi atpB.fasta
+ 1081  exit
+ 1082  cd projects/tolkin_web_service_dev_2
+ 1083  ls
+ 1084  ruby clustalw2_client.rb -s clustalw2.xml
+ 1085  ruby -v
+ 1086  rvm use 1.9.2
+ 1087  ruby clustalw2_client.rb -s clustalw2.xml
+ 1088  exit
+ 1089  vi /tmp/RackMultipart20120926-14309-1czdwmn
+ 1090  exit
+ 1091  rvm 1.9.2
+ 1092  rvm use 1.9.2
+ 1093  ruby -v
+ 1094  rails s
+ 1095  ruby -v
+ 1096  rails
+ 1097  rails s
+ 1098  bundle update
+ 1099  cd projects/tolkin_web_service_dev_2
+ 1100  rails s
+ 1101  exit
+ 1102  sudo su
+ 1103  exit
+ 1104  java -version
+ 1105  which java
+ 1106  find /usr -wholename "bin/java"
+ 1107  find /usr -wholename "*bin/java"
+ 1108  find /usr -wholename "*bin/java" -exec {} -verrsion \;
+ 1109  find /usr -wholename "*bin/java" -exec {} -version \;
+ 1110  grep sudo /etc/group
+ 1111  which java
+ 1112  ls -hl /usr/bin/java
+ 1113  ls -hl /etc/alternatives/java
+ 1114  /usr/lib/jvm/jdk1.6.0_34/bin/java -version
+ 1115  exit
+ 1116  pwd
+ 1117  cd Downloads/CAMPANULACEAE/seqs_test/nico_seqs/
+ 1118  ls -al
+ 1119  python 120928_elvis_concatenate_0.py 
+ 1120  pwd
+ 1121  python 120928_elvis_concatenate_0.py 
+ 1122  clear
+ 1123  python 120928_elvis_concatenate_0.py 
+ 1124  clear
+ 1125  python 120928_elvis_concatenate_0.py 
+ 1126  clear
+ 1127  python 120928_elvis_concatenate_0.py 
+ 1128  clear
+ 1129  python 120928_elvis_concatenate_0.py 
+ 1130  clear
+ 1131  python 120928_elvis_concatenate_0.py 
+ 1132  clear
+ 1133  python 120928_elvis_concatenate_0.py 
+ 1134  clear
+ 1135  python 120928_elvis_concatenate_0.py 
+ 1136  clear
+ 1137  python 120928_elvis_concatenate_0.py 
+ 1138  clear
+ 1139  python 120928_elvis_concatenate_0.py 
+ 1140  clear
+ 1141  python 120928_elvis_concatenate_0.py 
+ 1142  clear
+ 1143  python 120928_elvis_concatenate_0.py 
+ 1144  clear
+ 1145  python 120928_elvis_concatenate_0.py 
+ 1146  clear
+ 1147  python 120928_elvis_concatenate_0.py 
+ 1148  clear
+ 1149  python 120928_elvis_concatenate_0.py 
+ 1150  cd
+ 1151  cd Downloads/biopython-1.60/
+ 1152  sudo python setup.py install
+ 1153  python -version
+ 1154  python -v
+ 1155  man python
+ 1156  python -V
+ 1157  cd ..
+ 1158  ls
+ 1159  cd numpy-1.6.2/
+ 1160  ls
+ 1161  python setup.py build
+ 1162  sudo python setup.py install --prefix=/usr/local
+ 1163  cd ..
+ 1164  cd biopython-1.60/
+ 1165  sudo python setup.py install
+ 1166  cd 
+ 1167  cd Downloads/CAMPANULACEAE/seqs_test/nico_seqs/
+ 1168  python 120928_elvis_concatenate_0.py 
+ 1169  cd Downloads/CAMPANULACEAE/seqs_test/nico_seqs/
+ 1170  clear
+ 1171  python 120928_elvis_concatenate_0.py 
+ 1172  clear
+ 1173  python 120928_elvis_concatenate_0.py 
+ 1174  clear
+ 1175  python 120928_elvis_concatenate_0.py 
+ 1176  clear
+ 1177  python 120928_elvis_concatenate_0.py 
+ 1178  clear
+ 1179  python 120928_elvis_concatenate_0.py 
+ 1180  clear
+ 1181  python 120928_elvis_concatenate_0.py 
+ 1182  clear
+ 1183  python 120928_elvis_concatenate_0.py 
+ 1184  clear
+ 1185  python 120928_elvis_concatenate_0.py 
+ 1186  clear
+ 1187  python 120928_elvis_concatenate_0.py 
+ 1188  clear
+ 1189  python 120928_elvis_concatenate_0.py 
+ 1190  clear
+ 1191  python 120928_elvis_concatenate_0.py 
+ 1192  clear
+ 1193  python 120928_elvis_concatenate_0.py 
+ 1194  clear
+ 1195  python 120928_elvis_concatenate_0.py 
+ 1196  clear
+ 1197  python 120928_elvis_concatenate_0.py 
+ 1198  clear
+ 1199  python 120928_elvis_concatenate_0.py 
+ 1200  clear
+ 1201  python 120928_elvis_concatenate_0.py 
+ 1202  clear
+ 1203  python 120928_elvis_concatenate_0.py 
+ 1204  clear
+ 1205  python 120928_elvis_concatenate_0.py 
+ 1206  clear
+ 1207  python 120928_elvis_concatenate_0.py 
+ 1208  clear
+ 1209  python 120928_elvis_concatenate_0.py 
+ 1210  clear
+ 1211  python 120928_elvis_concatenate_0.py 
+ 1212  clear
+ 1213  python 120928_elvis_concatenate_0.py 
+ 1214  clear
+ 1215  python 120928_elvis_concatenate_0.py 
+ 1216  clear
+ 1217  python 120928_elvis_concatenate_0.py 
+ 1218  clear
+ 1219  python 120928_elvis_concatenate_0.py 
+ 1220  clear
+ 1221  python 120928_elvis_concatenate_0.py 
+ 1222  ls
+ 1223  clear
+ 1224  python 120928_elvis_concatenate_0.py 
+ 1225  clear
+ 1226  python 120928_elvis_concatenate_0.py 
+ 1227  python 120928_elvis_concatenate_0.py > log.txt
+ 1228  clear
+ 1229  python 120928_elvis_concatenate_0.py > log.txt
+ 1230  clear
+ 1231  python 120928_elvis_concatenate_0.py > log.txt
+ 1232  clear
+ 1233  python 120928_elvis_concatenate_0.py > log.txt
+ 1234  clear
+ 1235  python 120928_elvis_concatenate_0.py > log.txt
+ 1236  clear
+ 1237  python 120928_elvis_concatenate_0.py > log.txt
+ 1238  clear
+ 1239  python 120928_elvis_concatenate_0.py > log.txt
+ 1240  clear
+ 1241  python 120928_elvis_concatenate_0.py > log.txt
+ 1242  clear
+ 1243  python 120928_elvis_concatenate_0.py > log.txt
+ 1244  clear
+ 1245  python 120928_elvis_concatenate_0.py > log.txt
+ 1246  clear
+ 1247  python 120928_elvis_concatenate_0.py > log.txt
+ 1248  clear
+ 1249  python 120928_elvis_concatenate_0.py > log.txt
+ 1250  clear
+ 1251  python 120928_elvis_concatenate_0.py > log.txt
+ 1252  clear
+ 1253  python 120928_elvis_concatenate_0.py > log.txt
+ 1254  clear
+ 1255  python 120928_elvis_concatenate_0.py > log.txt
+ 1256  clear
+ 1257  python 120928_elvis_concatenate_0.py > log.txt
+ 1258  clear
+ 1259  python 120928_elvis_concatenate_0.py > log.txt
+ 1260  clear
+ 1261  python 120928_elvis_concatenate_0.py > log.txt
+ 1262  python -V
+ 1263  exit
+ 1264  cd Downloads/CAMPANULACEAE/seqs_test/
+ 1265  ls -al
+ 1266  cd nico_seqs/
+ 1267  python 121002_elvis_biopython_read_seq_unaligned_vs_aligned_1.py 
+ 1268  cd ..
+ 1269  ls
+ 1270  cd batch_concatenate/
+ 1271  python 121003_elvis_concatenate_ver_1.py 
+ 1272  ls
+ 1273  cd ..
+ 1274  ls
+ 1275  python 121003_elvis_concatenate_ver_1.py 
+ 1276  cd batch_concatenate/
+ 1277  ls -al
+ 1278  ls
+ 1279  mv 121003_elvis_concatenate_ver_1.py~ 121003_elvis_concatenate_ver_1.py
+ 1280  cd ..
+ 1281  python 121003_elvis_concatenate_ver_1.py 
+ 1282  cd Downloads/
+ 1283  ls
+ 1284  cd CAMPANULACEAE/
+ 1285  ls
+ 1286  cd seqs_test/
+ 1287  ls
+ 1288  python 121003_elvis_concatenate_ver_1.py 
+ 1289  python 121003_elvis_concatenate_ver_1.py
+ 1290  ls
+ 1291  python 121003_elvis_biopython_read_nexus_1.py 
+ 1292  ls
+ 1293  perl alignment_convertor.pl
+ 1294  perl alignment_convertor.pl -i petD_alignment_680taxa.nex -o petD_alignment_680taxa.fasta -f fasta
+ 1295  perl alignment_convertor.pl
+ 1296  perl alignment_convertor.pl -i petD_alignment_680taxa.nex -o petD_alignment_680taxa.fasta -f fasta -g nexus
+ 1297  ls
+ 1298  perl alignment_convertor.pl -i petD_alignment_680taxa.nex -o petD_alignment_680taxa.fasta -f fasta -g nex
+ 1299  perl alignment_convertor.pl -g nexus -i petD_alignment_680taxa.nex -o petD_alignment_680taxa.fasta -f fasta
+ 1300  perl alignment_convertor.pl -i petD_alignment_680taxa.nex -g nexus -o petD_alignment_680taxa.fasta -f fasta
+ 1301  perl alignment_convertor.pl
+ 1302  perl -MCPAN -e 'install Bio::NEXUS'
+ 1303  ls
+ 1304  perl alignment_convertor.pl
+ 1305  perl -MCPAN -e 'install Bio::NEXUS'
+ 1306  sudo su
+ 1307  perl alignment_convertor.pl
+ 1308  ls
+ 1309  rvm use 1.9.2
+ 1310  ruby 1.rb
+ 1311  ruby 1.rb > log.txt
+ 1312  ruby 1.rb
+ 1313  ruby 1.rb > log.txt
+ 1314  python 121003_elvis_concatenate_ver_1.py 
+ 1315  exit
+ 1316  cd Downloads/CAMPANULACEAE/seqs_test/
+ 1317  ls
+ 1318  ls -al
+ 1319  python 121004_elvis_python_read_nexus_to_fasta_1.py 
+ 1320  python 121004_elvis_python_read_nexus_to_fasta_1.py > log.txt
+ 1321  python 121004_elvis_python_read_nexus_to_fasta_1.py
+ 1322  python 121004_elvis_python_read_nexus_to_fasta_1.py > log.txt
+ 1323  python 121004_elvis_python_read_nexus_to_fasta_1.py
+ 1324  python 121004_elvis_python_read_nexus_to_fasta_1.py > log.txt
+ 1325  python 121004_elvis_python_read_nexus_to_fasta_1.py
+ 1326  python 121004_elvis_python_read_nexus_to_fasta_1.py > log.txt
+ 1327  python 121004_elvis_python_read_nexus_to_fasta_1.py
+ 1328  python 121004_elvis_python_read_nexus_to_fasta_1.py > log.txt
+ 1329  python 121004_elvis_python_read_nexus_to_fasta_1.py
+ 1330  exit
+ 1331  cd Downloads/CAMPANULACEAE/seqs_test/
+ 1332  ls
+ 1333  python 121005_elvis_biopython_search_download_from_entrez_1.py 
+ 1334  exit
+ 1335  cd Downloads/
+ 1336  ls
+ 1337  ls -al
+ 1338  cd consel
+ 1339  ls
+ 1340  cd elvis_test_121009/
+ 1341  ls
+ 1342  ./src/makermt -puzzle test.txt
+ 1343  ./../src/makermt -puzzle test.txt
+ 1344  ./../src/makermt
+ 1345  ./../src/makermt --puzzle test.txt
+ 1346  ./../src/consel test
+ 1347  catpv test
+ 1348  ./../src/catpv test
+ 1349  ./../src/makermt --puzzle test.txt
+ 1350  ./../src/consel test
+ 1351  ./../src/catpv test
+ 1352  ./../src/makermt --puzzle test.txt
+ 1353  ./../src/consel test
+ 1354  ./../src/catpv test
+ 1355  history
+ 1356  cd ..
+ 1357  ls
+ 1358  cd ..
+ 1359  ls
+ 1360  cd RAxML-7.2.8-ALPHA/
+ 1361  ls
+ 1362  cd test1/
+ 1363  ls
+ 1364  cd 121009-consel-f-test/
+ 1365  ls
+ 1366  ./../raxmlHPC -f g -s Total_cyp50_alln.phy -n Total_cyp50_alln.phy.out -m GTRGAMMAI -z RAxML_bestTree.Total_cyp50_alln.phy.out -q total_partition -d -# 100
+ 1367  ./../../raxmlHPC -f g -s Total_cyp50_alln.phy -n Total_cyp50_alln.phy.out -m GTRGAMMAI -z RAxML_bestTree.Total_cyp50_alln.phy.out -q total_partition -d -# 100
+ 1368  exit
+ 1369  cd Downloads/
+ 1370  R
+ 1371  pwd
+ 1372  R
+ 1373  ls -al
+ 1374  exit
+ 1375  cd Downloads/CAMPANULACEAE/seqs_test
+ 1376  ls
+ 1377  python 121015_elvis_read_dataset_1.py 
+ 1378  ls
+ 1379  cd batch_concatenate/
+ 1380  ls
+ 1381  python 121015_elvis_change_access_number_1.py 
+ 1382  cd ..
+ 1383  ;s
+ 1384  ls
+ 1385  python 121015_elvis_read_dataset_1.py 
+ 1386  cd batch_concatenate/
+ 1387  python 121015_elvis_change_access_number_1.py 
+ 1388  python 121015_elvis_change_access_number_2.py 
+ 1389  python 121015_elvis_change_access_number_1.py 
+ 1390  python 121015_elvis_batch_change_access_number_etc_1.py 
+ 1391  python 121015_elvis_change_access_number_
+ 1392  python 121015_elvis_change_access_number_1.py 
+ 1393  python 121015_elvis_batch_change_access_number_etc_1.py 
+ 1394  python 121015_elvis_change_access_number_1.py 
+ 1395  python 121015_elvis_batch_change_access_number_etc_1.py 
+ 1396  python 121015_elvis_change_access_number_1.py 111
+ 1397  cd ..
+ 1398  ls
+ 1399  python 121015_elvis_batch_change_access_number_etc_2.py 
+ 1400  python 121015_elvis_change_access_number_1.py -s batch_concatenate/psbBTNH.fasta.ed
+ 1401  python 121015_elvis_change_access_number_1.py -s batch_concatenate/5.8S.fasta.ed
+ 1402  python 121015_elvis_change_access_number_1.py -s batch_concatenate/psbBTNH.fasta.ed
+ 1403  python 121015_elvis_batch_change_access_number_etc_1.py 
+ 1404  python 121015_elvis_batch_change_access_number_etc_3.py 
+ 1405  python 121015_elvis_batch_change_access_number_etc_1.py 
+ 1406  python 121015_elvis_batch_change_access_number_etc_3.py 
+ 1407  ls -al
+ 1408  cd batch_concatenate/
+ 1409  ls -al
+ 1410  rm -rf .py~
+ 1411  ls -al
+ 1412  rm -rf .py
+ 1413  ls -al
+ 1414  rm -rf *.py~
+ 1415  ls -al
+ 1416  cd ..
+ 1417  python 121015_elvis_batch_change_access_number_etc_3.py 
+ 1418  python 121015_elvis_read_genbank_by_id.py 
+ 1419  python 121015_elvis_batch_change_access_number_etc_4.py 
+ 1420  python 121015_elvis_read_dataset_1.py -s result.fasta
+ 1421  python 121015_elvis_batch_change_access_number_etc_4.py 
+ 1422  python 121015_elvis_read_genbank_by_id.py 
+ 1423  python 121015_elvis_batch_change_access_number_etc_4.py 
+ 1424  ls -al
+ 1425  cd batch_concatenate/
+ 1426  ls
+ 1427  rm -rf ITS.gbget~ 
+ 1428  python 121015_elvis_batch_change_access_number_etc_4.py 
+ 1429  cd ..
+ 1430  python 121015_elvis_batch_change_access_number_etc_4.py 
+ 1431  python 121016_elvis_batch_change_outgroup_fasta_and_fit_the_format_1.py 
+ 1432  python 121015_elvis_batch_change_aligned_fasta_to_unaligned_and_fit_the_format.py 
+ 1433  python 121016_elvis_batch_change_outgroup_fasta_and_fit_the_format_1.py 
+ 1434  R
+ 1435  python 121015_elvis_read_dataset_1.py -s combined.fasta 
+ 1436  python 121017_elvis_read_dataset_2.py -s combined.fasta 
+ 1437  python 121017_elvis_batch_remove_duplicated_records_from_fasta_1.py -s test.fasta -o 123.txt 
+ 1438  python 121017_elvis_batch_remove_duplicated_records_from_fasta_1.py -i test.fasta -o 123.txt 
+ 1439  python 121017_elvis_batch_remove_duplicated_records_from_fasta_1.py -i combined.fasta -o combined2.fasta 
+ 1440  python 121017_elvis_read_dataset_2.py -s combined2.fasta 
+ 1441  python elvis_retrieve_gene_marker_names_from_fasta_1_121019.py -s new2.fasta2 -o 111
+ 1442  python elvis_retrieve_gene_marker_names_from_fasta_2_121019.py -s new2.fasta2 -o 111
+ 1443  python elvis_retrieve_gene_marker_names_from_fasta_2_121019.py -i new2.fasta2 -o 111
+ 1444  python elvis_add_gene_marker_names_from_fasta_to_another_fasta_1_121019.py -i new2.fasta2 -o 111
+ 1445  python elvis_add_gene_marker_names_from_fasta_to_another_fasta_1_121019.py -i new2.fasta2 -o new2.fasta3
+ 1446  python 121017_elvis_batch_remove_duplicated_records_from_fasta_1.py -i combined.fasta -o combined2.fasta 
+ 1447  cd  muscle
+ 1448  ls
+ 1449  ./muscle3.8.31_i86linux64 -in test-121019.fasta -out result.phy -phys
+ 1450  ./muscle3.8.31_i86linux64 -in 111.fasta -out result.phy -phys
+ 1451  ./muscle3.8.31_i86linux64 -in test-121019.fasta -out result.phy -phys
+ 1452  ./muscle3.8.31_i86linux64 -in 121019-dataset-1.fasta -out result.phy -phys
+ 1453  ls
+ 1454  rm -rf *~
+ 1455  ls
+ 1456  exit
+ 1457  ls
+ 1458  python 121015_elvis_batch_change_aligned_fasta_to_unaligned_and_fit_the_format.py 
+ 1459  cd added_seqs/
+ 1460  ls
+ 1461  cd nico_added_more/
+ 1462  ls
+ 1463  ls -al
+ 1464  cd ..
+ 1465  python 121015_elvis_batch_change_aligned_fasta_to_unaligned_and_fit_the_format.py 
+ 1466  python 121016_elvis_read_dataset_and_generate_gene_marker_species_list_1.py 
+ 1467  python 121016_elvis_read_dataset_and_generate_gene_marker_species_list_1.py -s dataset.fasta
+ 1468  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1469  python 121016_elvis_read_dataset_and_generate_gene_marker_species_list_1.py -s combined.fasta
+ 1470  python 121016_elvis_change_petD_fasta_and_fit_the_format_1.py 
+ 1471  python 121016_elvis_change_petD_fasta_and_fit_the_format_1.py > petD_matching.txt
+ 1472  python 121016_elvis_change_petD_fasta_and_fit_the_format_1.py
+ 1473  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1474  python 121016_elvis_read_dataset_and_generate_gene_marker_list_and_species_list_and_id_list_1.py -s combined.fasta
+ 1475  python 121016_elvis_compare_two_id_list_and_filter_new_out_1.py -o old.txt -n new.txt
+ 1476  python 121016_elvis_compare_two_id_list_and_filter_new_out_1.py -o idlist.txt -n fetchID.txt
+ 1477  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list_1.txt -o 111.fasta
+ 1478  python 121015_elvis_read_genbank_by_id.py 
+ 1479  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list_1.txt -o 111.fasta
+ 1480  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list_1.txt -o 111.fasta -g genemarker.txt
+ 1481  python 121017_elvis_batch_download_seq_from_genbank_by_id_list.py -i plan_download_genbank_id_list_1.txt -o 111.fasta -g genemarker.txt > download_seq.log
+ 1482  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list.txt -o new.fasta -g genemarker.txt > download_seq.log
+ 1483  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list_1.txt -o new2.fasta -g genemarker.txt > download_seq.log
+ 1484  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list_1.txt -o new2.fasta -g genemarker.txt
+ 1485  python 121017_elvis_batch_download_seq_from_genbank_by_id_list_1.py -i plan_download_genbank_id_list.txt -o new2.fasta -g genemarker.txt > download_seq.log
+ 1486  python 121018_elvis_change_petD_fasta_and_fit_the_format_2.py 
+ 1487  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1488  python 121016_elvis_read_dataset_and_generate_gene_marker_list_and_species_list_and_id_list_1.py -s combined.fasta
+ 1489  python 121018_elvis_change_petD_fasta_and_fit_the_format_2.py 
+ 1490  python 121018_elvis_change_petD_fasta_and_fit_the_format_2.py > log2
+ 1491  python 121018_elvis_change_petD_fasta_and_fit_the_format_2.py
+ 1492  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1493  python 121016_elvis_read_dataset_and_generate_gene_marker_list_and_species_list_and_id_list_1.py -s combined.fasta
+ 1494  python 121018_elvis_read_dataset_3.py -s combined.fasta -o 121019datamatrix.csv
+ 1495  ls
+ 1496  ls -al
+ 1497  python 121018_elvis_read_dataset_3.py -s combined.fasta -o 121019datamatrix.csv
+ 1498  python 121016_elvis_read_dataset_and_generate_gene_marker_list_and_species_list_and_id_list_1.py -s combined.fasta
+ 1499  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1500  python 121018_elvis_read_dataset_3.py -s combined.fasta -o 121019datamatrix.csv
+ 1501  python 121018_elvis_read_dataset_3.py -s combined2.fasta -o 121019datamatrix.csv
+ 1502  python elvis_read_dataset_4_121019.py -s combined_test.fasta -o 123
+ 1503  python 121018_elvis_read_dataset_3.py -s combined.fasta -o 121019datamatrix.csv
+ 1504  python elvis_read_dataset_4_121019.py -s combined_test.fasta -o 123
+ 1505  python elvis_read_dataset_4_121019.py -s combined2.fasta -o 123
+ 1506  python elvis_add_gene_marker_names_from_fasta_to_another_fasta_1_121019.py -i new2.fasta2 -o new3.fasta
+ 1507  python 121016_elvis_combine_fasta_files_1.py -s /home/elviscat/Downloads/CAMPANULACEAE/seqs_test/transfered/ -o combined.fasta
+ 1508  python 121017_elvis_batch_remove_duplicated_records_from_fasta_1.py -i combined.fasta -o combined_remove_dup.fasta
+ 1509  python elvis_read_dataset_4_121019.py -s combined_remove_dup.fasta -o 121019-dataset-1.fasta
+ 1510  history
+ 1511  exit
+ 1512  ssh -l hwu5 maydenlab.slu.edu
+ 1513  ls
+ 1514  cd ..
+ 1515  ls
+ 1516  cd 121023-Seqs-from-GenBank/
+ 1517  ls
+ 1518  python elvis_biopython_search_download_from_entrez_3_121023.py 
+ 1519  python elvis_batch_download_seq_from_genbank_by_id_list_2_121023.py -i fetchID_test.txt -o 123.txt
+ 1520  python elvis_batch_download_seq_from_genbank_by_id_list_2_121023.py -i fetchID.txt -o downloaded_from_genbank.fasta
+ 1521  python elvis_calculate_gene_frequency_from_genbank_downloaded_seqs_fasta_1_121024.py -i downloaded_from_genbank.fasta -o filter1.fasta
+ 1522  python elvis_calculate_gene_frequency_from_genbank_downloaded_seqs_fasta_1_121024.py -i downloaded_from_genbank.fasta
+ 1523  ls
+ 1524  cd ..
+ 1525  cd 121025-results-/
+ 1526  ls
+ 1527  python elvis-read-fasta-dataset-generate-access-number-1-121025.py -s combined.afasta 
+ 1528  python elvis-read-fasta-dataset-generate-access-number-1-121025.py -s combined_remove_dup.fasta 
+ 1529  python elvis-read-fasta-dataset-generate-access-number-1-121025.py -o fetchID-121023.txt -n idlist121025.txt
+ 1530  python elvis_compare_two_id_list_and_filter_new_out_1_121025.py -o fetchID-121023.txt -n idlist121025.txt
+ 1531  exit
+ 1532  cd ..
+ 1533  ls
+ 1534  cd 121022-test-2
+ 1535  ls
+ 1536  python elvis_batch_combine_aligned_fasta_files_and_build_stat_and_partition_files_1_121022.py 
+ 1537  cd ..
+ 1538  ls
+ 1539  cd ,,
+ 1540  cd ..
+ 1541  ls
+ 1542  cd ..
+ 1543  cd projects/
+ 1544  ls
+ 1545  cd tolkin_web_service_dev_2
+ 1546  rvm 1.9.2
+ 1547  ruby -v
+ 1548  rails s
+ 1549  cd ..
+ 1550  cd m791/
+ 1551  rails s
+ 1552  ls
+ 1553  ruby -v
+ 1554  rvm 1.9.2
+ 1555  ruby -v
+ 1556  rails s
+ 1557  exit
+ 1558  pwd
+ 1559  ls
+ 1560  histroy > 121022-history.txt
+ 1561  history > 121022-history.txt
+ 1562  cd Downloads/CAMPANULACEAE/seqs_test/
+ 1563  ls
+ 1564  python elvis_read_and_build_datasets_1_121022.py -s combined_test.fasta -o sample.fasta'
+ 1565  python elvis_read_and_build_datasets_1_121022.py -s combined_test.fasta -o sample.fasta
+ 1566  python elvis_read_and_build_datasets_1_121022.py -s combined_remove_dup.fasta -o for_align.fasta
+ 1567  cd muscle
+ 1568  ls
+ 1569  ./muscle3.8.31_i86linux64 -in ITS.fasta -out ITS.phy -phys -verbose
+ 1570  ./muscle3.8.31_i86linux64 -in ITS.fasta -out ITS.fasta -verbose
+ 1571  cd ..
+ 1572  ls
+ 1573  python elvis_read_and_build_datasets_1_121022.py -s combined_remove_dup.fasta -o for_align.fasta
+ 1574  cd muscle
+ 1575  ls
+ 1576  ./muscle3.8.31_i86linux64 -in ITS.fasta -out ITS.phy -phys -verbose
+ 1577  ./muscle3.8.31_i86linux64 -in ITS.fasta -out ITS.afasta -verbose
+ 1578  cd ..
+ 1579  cd 121022-test-1/
+ 1580  ls
+ 1581  python elvis_transfer_aligned_fasta_to_phylip_1_121022.py -i ITS.afasta -o ITS.phy
+ 1582  python elvis_batch_remove_duplicated_records_from_fasta_format_1_121017.py -i ITS.afasta -o ITS.afasta2
+ 1583  python elvis_transfer_aligned_fasta_to_phylip_1_121022.py -i ITS.afasta2 -o ITS.phy
+ 1584  cd ..
+ 1585  ls
+ 1586  cd 121022-test-2
+ 1587  ls
+ 1588  python elvis_batch_remove_duplicated_records_from_fasta_format_and_build_sequential_batch_muscle_script_1_121022.py 
+ 1589  pwd
+ 1590  python elvis_batch_remove_duplicated_records_from_fasta_format_and_build_sequential_batch_muscle_script_1_121022.py 
+ 1591  history
+ 1592  python elvis_batch_remove_duplicated_records_from_fasta_format_and_build_sequential_batch_muscle_script_1_121022.py 
+ 1593  ./muscle3.8.31_i86linux64 -in atpB.fasta -out atpB.afasta -verbose
+ 1594  ./muscle_launch_serially.sh 
+ 1595  cd ..
+ 1596  cd projects/tolkin_web_service_dev_2
+ 1597  vi new.xml
+ 1598  curl -v -H "Content-Type: application/xml; charset=utf-8" --data-ascii @muscle.xml http://localhost:3000/muscle.json
+ 1599  cd /home/elviscat/projects/tolkin_web_service_dev_2/2012-10-24-1351100150
+ 1600  cd  2012-10-24-1351100322/
+ 1601  ls
+ 1602  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -phy -out aligned.phy -group
+ 1603  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -out aligned.phy -phy -group
+ 1604  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -out aligned.phy -clw -group
+ 1605  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -out aligned.txt -clw -group
+ 1606  ls
+ 1607  vi aligned.phy 
+ 1608  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -out aligned.phy -phy -group
+ 1609  ./../muscle3.8.31_i86linux64 -in source.fasta -verbose -log 2012-10-24-1351100322.output -quiet -out aligned.afasta -group
+ 1610  cd ..
+ 1611  cd 
+ 1612  cd projects/tolkin_web_service_dev_2
+ 1613  cd 2012-10-24-1351101560/
+ 1614  ls
+ 1615  cd ..
+ 1616  ls
+ 1617  cd 2012-10-24-1351101560/
+ 1618  python ../transfer_aligned_fasta_to_phylip.py -i aligned.fasta -o aligned.phy
+ 1619  ps -aux
+ 1620  exit
+ 1621  cd Downloads/CAMPANULACEAE/seqs_test/
+ 1622  cd 121029-test-1/
+ 1623  python elvis_retrieve_possible_gene_marker_names_from_fasta_1_121029.py -i downloaded_from_genbank.fasta -o 111
+ 1624  python elvis_retrieve_possible_gene_marker_names_from_fasta_1_121029.py -i downloaded_from_genbank.fasta -o stat.txt
+ 1625  python elvis_retrieve_possible_gene_marker_names_from_fasta_1_121029.py -i downloaded_from_genbank.fasta -o stat2.txt
+ 1626  python elvis_retrieve_possible_gene_marker_names_from_fasta_1_121029.py -i downloaded_from_genbank.fasta -o stat3.txt
+ 1627  python elvis_remove_duplicated_records_from_text_file_1_121029.py -i gene_marker_dictionary.txt -o gene_marker_dictionary_2.txt
+ 1628  python elvis_allocate_gene_name_by_given_marker_names_from_NCBI_downloaded_seqs_1_121029.py -i downloaded_from_genbank.fasta -m gene_marker_dictionary_2.txt
+ 1629  python elvis_allocate_gene_name_by_given_marker_names_from_NCBI_downloaded_seqs_2_121030.py -i downloaded_from_genbank.fasta -m gene_marker_dictionary_2.txt
+ 1630  python elvis_allocate_gene_name_by_given_marker_names_from_NCBI_downloaded_seqs_2_121030.py -i downloaded_from_genbank.fasta -m gene_marker_dictionary_2.txt > log
+ 1631  python elvis_allocate_gene_name_by_given_marker_names_from_NCBI_downloaded_seqs_2_121030.py -i downloaded_from_genbank.fasta -m gene_marker_dictionary_2.txt
+ 1632  python elvis_allocate_gene_name_by_given_marker_names_from_NCBI_downloaded_seqs_2_121030.py -i downloaded_from_genbank.fasta -m gene_marker_dictionary_2.txt > log
+ 1633  exit
+ 1634  cd  usr
+ 1635  cd /
+ 1636  ls
+ 1637  cd usr
+ 1638  cd share/
+ 1639  cd hplip/
+ 1640  ls
+ 1641  cd installer/
+ 1642  ls
+ 1643  cd ..
+ 1644  su -c make unintall
+ 1645  python uninstall.py
+ 1646  sudo su
+ 1647  exit
+ 1648  cd  Downloads/
+ 1649  sh hplip-3.12.10a.run 
+ 1650  exit
+ 1651  sh hplip-3.12.10a.run 
+ 1652  cd Downloads/
+ 1653  sh hplip-3.12.10a.run 
+ 1654  exit
+ 1655  cd Downloads/CAMPANULACEAE/seq_test/
+ 1656  cd Downloads/CAMPANULACEAE/
+ 1657  cd seqs_test/
+ 1658  cd 121030-test-1/
+ 1659  ls
+ 1660  python elvis_filter_no_access_number_sequences_1_121030.py -i combined_remove_dup.fasta 
+ 1661  python elvis_remove_duplicated_sequences_from_a_specified_file_1_121030.py -i combined_remove_dup.fasta -o 222.fasta -r downloaded_from_genbank.fasta 
+ 1662  python elvis_filter_no_access_number_sequences_1_121030.py -i combined_remove_dup.fasta 
+ 1663  python elvis_remove_duplicated_sequences_from_a_specified_file_1_121030.py -i combined_remove_dup.fasta -o 222.fasta -r downloaded_from_genbank.fasta 
+ 1664  python elvis_filter_no_access_number_sequences_1_121030.py -i combined_remove_dup_2.fasta 
+ 1665  ls
+ 1666  cd ..
+ 1667  cd 121029-test-1/
+ 1668  ls
+ 1669  cd 121030-340pm-test-2/
+ 1670  ls
+ 1671  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL2.fasta
+ 1672  [A
+ 1673  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL2.fasta
+ 1674  ./../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1675  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1676  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL.fasta1
+ 1677  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1678  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL.fasta1
+ 1679  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1680  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL.fasta1
+ 1681  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1682  python elvis_build_align_fasta_1_121030.py -i rbcL.fasta -o rbcL.fasta1
+ 1683  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1684  ls
+ 1685  python elvis_build_align_fasta_1_121030.py -i ITS.fasta -o ITS.fasta1
+ 1686  ./../../muscle/muscle3.8.31_i86linux64 -in ITS.fasta1 -out ITS.afasta -verbose
+ 1687  python elvis_build_align_fasta_1_121030.py -i atpB.fasta -o atpB.fasta1
+ 1688  ./../../muscle/muscle3.8.31_i86linux64 -in atpB.fasta1 -out atpB.afasta -verbose
+ 1689  python elvis_build_align_fasta_1_121030.py -i matK.fasta -o matK.fasta1
+ 1690  ./../../muscle/muscle3.8.31_i86linux64 -in matK.fasta1 -out matK.afasta -verbose
+ 1691  ./../../muscle/muscle3.8.31_i86linux64 -in rbcL.fasta1 -out rbcL.afasta -verbose
+ 1692  python elvis_build_align_fasta_1_121030.py -i petD.fasta -o petD.fasta1
+ 1693  ./../../muscle/muscle3.8.31_i86linux64 -in petD.fasta1 -out petD.afasta -verbose
+ 1694  cd ..
+ 1695  ls
+ 1696  cd 121031-1143am-test-1/
+ 1697  ls
+ 1698  python elvis_batch_combine_aligned_fasta_files_and_build_stat_and_partition_files_2_121031.py 
+ 1699  cd combined/
+ 1700  ls
+ 1701  python elvis_transfer_aligned_fasta_to_phylip_1_121022.py -i combined.afasta -o campanulaceae.phy
+ 1702  history > history.txt
+ 1703  cd ..
+ 1704  ls
+ 1705  python elvis_batch_combine_aligned_fasta_files_and_build_stat_and_partition_files_2_121031.py > log.txt
+ 1706  history > history.txt

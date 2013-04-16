@@ -1,0 +1,22 @@
+<% title "Workflow Task Port List" %>
+
+<table border="1" width="1024">
+  <tr>
+    <th>Workflow Task ID</th>
+    <th>Port Type</th>
+    <th>Location</th>
+    <th>Operation</th>
+  </tr>
+  <% for wtask_port in @wtask_ports %>
+    <tr>
+      <td><%= wtask_port.wtask_id %></td>
+      <td><%= wtask_port.ptype %></td>
+      <td><%= wtask_port.ploc %></td>
+      
+      <td colspan="4"><%= link_to "Show", wtask_port %> <%= link_to "Edit", edit_wtask_port_path(wtask_port) %> <!--<td><%= link_to "Destroy", wtask_port, :confirm => 'Are you sure?', :method => :delete %></td>--> <%= button_to 'delete', wtask_port_path(wtask_port), :method => :delete %> </td>
+      
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Wtask Port", new_wtask_port_path %></p>

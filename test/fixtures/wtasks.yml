@@ -1,0 +1,9 @@
+one:
+  wflow_id: 1
+  exe_id: 1
+  inline: MyText
+
+two:
+  wflow_id: 1
+  exe_id: 1
+  inline: MyText

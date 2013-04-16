@@ -1,0 +1,81 @@
+<% title "Workflow" %>
+
+<p>
+  <strong>Workflow Name:</strong>
+  <%= @wflow.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @wflow.desc %>
+</p>
+<p>
+  <strong>Owner:</strong>
+  <%= @wflow.owner %>
+</p>
+
+<p>
+  <strong>Task List:</strong>
+</p>
+
+<table border="1">
+  <tr>
+    <td>Task Name</td>
+    <td>Execution Program</td>
+    <td>InLine</td>
+    <td>Ports</td>
+    <td>Status</td>
+    <td>Run this Task</td>
+  </tr>
+  <tr>
+  <% @wflow.wtasks.each do |wtasks| %>
+    <td>
+      <%= link_to wtasks.name, edit_wtask_path(wtasks.id) %>
+    </td>
+    <td>
+    
+    <!--<%= link_to wtasks.exe_id, wtask_path(wtasks.id) %>-->
+    <% @wexecs.each do |wexec| %>
+      <% if wexec.id == wtasks.exe_id %>
+      <!--<%= link_to wexec.name, wtask_path(wtasks.id) %>-->
+      <%= wexec.name %>
+      <% end %>
+    <% end %>    
+
+    </td>
+    <td><%= link_to wtasks.inline, edit_wtask_path(wtasks.id) %></td>
+    <td>
+      <% wtasks.wtask_ports.each do |wtask_ports| %>
+        <% if wtask_ports.ptype == 0 %>
+          <%= link_to 'Input Port:' + wtask_ports.ploc, wtask_ports.ploc %>
+        <% else %>
+          <%= link_to 'Output Port:' + wtask_ports.ploc, wtask_ports.ploc %>
+        <% end %>
+        <p></p>
+      <% end %>
+    </td>
+    <td>
+      <%= wtasks.wtask_status %>
+    </td>
+    <td>
+      <%= button_to "Run!", '../runtasks/'+wtasks.id.to_s, :id => "run-wtask-btn",:class => "", :method => :get %>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+  <%= link_to 'Add a new task in this workflow', new_wtask_path(:wflow_id=>@wflow) %><br><br>
+  <%= link_to "Edit", edit_wflow_path(@wflow) %> |
+  <!--<%= link_to "Destroy", @wflow, :confirm => 'Are you sure?', :method => :delete %> |-->
+  <%= link_to "View All Workflows", wflows_path %>
+</p>
+
+<!--
+<%= form_tag("/workflowxmlbuildhelpers", :method => "post") do %>
+  <%= hidden_field_tag("wflow_id", @wflow.id) %>
+  <%= submit_tag("Workflow XML Build!") %>
+<% end %>
+-->
+
+

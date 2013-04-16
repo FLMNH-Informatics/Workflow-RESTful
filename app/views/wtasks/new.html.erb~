@@ -1,0 +1,5 @@
+<% title "New Wtask" %>
+
+<%= render 'form' %>
+
+<p><%= link_to "Back to List", wtasks_path %></p>

@@ -1,0 +1,35 @@
+<% title "Workflow Task List" %>
+
+<table border="1" width="1024">
+  <tr>
+    <th>Wflow_id</th>
+    <th>Exe_id</th>
+    <th>Inline</th>
+    <th>Operation</th>
+  </tr>
+  <% for wtask in @wtasks %>
+    <tr>
+      <td><%= wtask.wflow_id %></td>
+      <td>
+
+      <!--<%= wtask.exe_id %>-->
+      <% @wexecs.each do |wexec| %>
+        <% if wexec.id == wtask.exe_id %>
+        <%= wexec.name %>
+        <% end %>
+      <% end %>
+
+      </td>
+      <td><%= wtask.inline %></td>
+      <td colspan="4">
+
+        <%= link_to "Show", wtask %> 
+        <%= link_to "Edit", edit_wtask_path(wtask) %> 
+        <!--<%= link_to "Destroy", wtask, :confirm => 'Are you sure?', :method => :delete %>-->
+        <%= link_to 'Add a new port', new_wtask_port_path(:wtask_id=>wtask) %> <%= button_to 'delete', wtask_path(wtask), :method => :delete %>        
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Add New Wtask", new_wtask_path %></p>

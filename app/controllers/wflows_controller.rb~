@@ -1,0 +1,46 @@
+class WflowsController < ApplicationController
+  def index
+    @wflows = Wflow.all
+  end
+
+  def show
+    @wflow = Wflow.find(params[:id])
+    
+
+
+  end
+
+  def new
+    @wflow = Wflow.new
+  end
+
+  def create
+    @wflow = Wflow.new(params[:wflow])
+    if @wflow.save
+      redirect_to @wflow, :notice => "Successfully created wflow."
+    else
+      render :action => 'new'
+    end
+  end
+
+  def edit
+    @wflow = Wflow.find(params[:id])
+  end
+
+  def update
+    @wflow = Wflow.find(params[:id])
+    if @wflow.update_attributes(params[:wflow])
+      redirect_to @wflow, :notice  => "Successfully updated wflow."
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    @wflow = Wflow.find(params[:id])
+    @wflow.destroy
+    
+    redirect_to wflows_url, :notice => "Successfully destroyed wflow."
+    #redirect_to wflows_url
+  end
+end

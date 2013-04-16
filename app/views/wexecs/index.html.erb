@@ -1,0 +1,19 @@
+<% title "Wexecs" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Eloc</th>
+  </tr>
+  <% for wexec in @wexecs %>
+    <tr>
+      <td><%= wexec.name %></td>
+      <td><%= wexec.eloc %></td>
+      <td><%= link_to "Show", wexec %></td>
+      <td><%= link_to "Edit", edit_wexec_path(wexec) %></td>
+      <td><%= link_to "Destroy", wexec, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Wexec", new_wexec_path %></p>

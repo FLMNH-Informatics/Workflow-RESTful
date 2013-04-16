@@ -1,0 +1,41 @@
+<%= form_for @wtask do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :wflow_id, "Workflow ID" %><br />
+    
+    <% if params[:wflow_id] %>
+      <%= f.number_field :wflow_id, :readonly => true %>
+    <% else %>    
+      <%= f.number_field :wflow_id %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :exe_id, "Execution Program" %><br />
+    <% if @wtask.id %>
+      <% @wexecs.each do |wexec| %>
+        <% if wexec.id == @wtask[:exe_id] %>
+          <%= f.text_field :exe_id, :value => wexec.name, :readonly => true %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <!--<%= f.number_field :exe_id %>-->
+      <%= f.select :exe_id, @wexecs.collect{|w| [w.name, w.id]}, { :include_blank => false }  %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :inline %><br />
+    <%= f.text_area :inline %>
+    <% if not @wtask.id %>
+      <%= f.hidden_field :wtask_status, :value => "initialized" %>
+    <% end %>
+    <% if @wtask.id %>
+    <%= link_to "inline helper", '../../inlinehelpers/'+ @wtask.id.to_s %>
+    <% end %>
+
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

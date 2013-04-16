@@ -1,0 +1,4 @@
+class WtaskPort < ActiveRecord::Base
+  attr_accessible :wtask_id, :ptype, :ploc
+  belongs_to :wtasks
+end

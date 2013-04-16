@@ -1,0 +1,16 @@
+<%= form_for @wtask_port do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :wtask_id, "Task ID" %><br />
+    <%= f.number_field :wtask_id, :readonly => true %>
+  </p>
+  <p>
+    <%= f.label :ptype, "Port Type" %><br />
+    <%= f.select :ptype, @wexecs.collect{|w| [w.name, w.id]}, { :include_blank => false }  %>
+  </p>
+  <p>
+    <%= f.label :ploc, "Location" %><br />
+    <%= f.text_area :ploc %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

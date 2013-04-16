@@ -1,0 +1,16 @@
+<%= form_for @wexec_para do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :wexec_id %><br />
+    <%= f.number_field :wexec_id %>
+  </p>
+  <p>
+    <%= f.label :pname %><br />
+    <%= f.text_field :pname %>
+  </p>
+  <p>
+    <%= f.label :pcaption %><br />
+    <%= f.text_area :pcaption %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

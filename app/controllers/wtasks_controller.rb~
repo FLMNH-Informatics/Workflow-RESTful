@@ -1,0 +1,52 @@
+class WtasksController < ApplicationController
+  def index
+    @wtasks = Wtask.all
+    @wexecs = Wexec.all
+
+  end
+
+  def show
+    @wtask = Wtask.find(params[:id])
+    @wexecs = Wexec.all
+
+  end
+
+  def new
+    wflow_id = params[:wflow_id]
+    puts 'wflow_id is ::'
+    puts wflow_id
+    @wtask = Wtask.new
+    @wtask['wflow_id'] = wflow_id
+  end
+
+
+
+  def create
+    @wtask = Wtask.new(params[:wtask])
+
+    if @wtask.save
+      redirect_to @wtask, :notice => "Successfully created wtask."
+    else
+      render :action => 'new'
+    end
+  end
+
+  def edit
+    @wtask = Wtask.find(params[:id])
+  end
+
+  def update
+    @wtask = Wtask.find(params[:id])
+    if @wtask.update_attributes(params[:wtask])
+      redirect_to @wtask, :notice  => "Successfully updated wtask."
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    @wtask = Wtask.find(params[:id])
+    @wtask.destroy
+    redirect_to wtasks_url, :notice => "Successfully destroyed wtask."
+  end
+end
